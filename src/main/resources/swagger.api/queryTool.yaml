@@ -1,0 +1,48 @@
+openapi: 3.0.0
+info:
+  title: Query Tool API
+  version: v1
+  description: Query Tool API
+
+servers:
+  - url: /to-be-changed/
+
+paths:
+  /to-be-changed:
+    get:
+      operationId: getExample
+      description: example endpoint to generate api doc
+      responses:
+        '200':
+          description: 'example endpoint result to generate api doc'
+          content:
+            application/json:
+              schema:
+                type: string
+
+components:
+  schemas:
+    entityType:
+      $ref: schemas/entityType.json#/EntityType
+    entityDataType:
+      $ref: schemas/entityDataType.json#/EntityDataType
+    stringEntityDataType:
+      $ref: schemas/entityDataType.json#/StringEntityDataType
+    rangedUUIDEntityDataType:
+      $ref: schemas/entityDataType.json#/RangedUUIDEntityDataType
+    openUUIDEntityDataType:
+      $ref: schemas/entityDataType.json#/OpenUUIDEntityDataType
+    numberEntityDataType:
+      $ref: schemas/entityDataType.json#/NumberEntityDataType
+    integerEntityDataType:
+      $ref: schemas/entityDataType.json#/IntegerEntityDataType
+    booleanEntityDataType:
+      $ref: schemas/entityDataType.json#/BooleanEntityDataType
+    dateEntityDataType:
+      $ref: schemas/entityDataType.json#/DateEntityDataType
+    enumEntityDataType:
+      $ref: schemas/entityDataType.json#/EnumEntityDataType
+    objectEntityDataType:
+      $ref: schemas/entityDataType.json#/ObjectEntityDataType
+    arrayEntityDataType:
+      $ref: schemas/entityDataType.json#/ArrayEntityDataType

@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Entity Data Type Enum Schema",
+  "description": "A definition of the entity types that can be used in the Query Tool",
+  "EntityDataTypeEnum": {
+    "type": "string",
+    "enum": ["STRING", "NUMBER", "INTEGER", "OBJECT", "ARRAY", "BOOLEAN"]
+  }
+}
