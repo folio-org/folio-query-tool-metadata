@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Entity Data Type Schema",
+  "description": "A definition of the entity data type types that EntityTypeColumns can have.",
+  "EntityDataType": {
+    "type": "object",
+    "properties": {
+      "description": "The technical string property used as a discriminator. It contains the name of a particular entity data type.",
+      "dataType": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "dataType"
+    ],
+    "discriminator": {
+      "propertyName": "dataType"
+    }
+  },
+  "StringEntityDataType": {
+    "description": "Entity field type defined in https://issues.folio.org/browse/UIPQB-5",
+    "allOf": [
+      {
+        "$ref": "entityDataType.json#/EntityDataType"
+      }
+    ]
+  },
+  "RangedUUIDEntityDataType": {
+    "description": "Entity field type defined in https://issues.folio.org/browse/UIPQB-2, https://issues.folio.org/browse/UIPQB-3",
+    "allOf": [
+      {
+        "$ref": "entityDataType.json#/EntityDataType"
+      }
+    ]
+  },
+  "OpenUUIDEntityDataType": {
+    "description": "Entity field type defined in https://issues.folio.org/browse/UIPQB-4",
+    "allOf": [
+      {
+        "$ref": "entityDataType.json#/EntityDataType"
+      }
+    ]
+  },
+  "NumberEntityDataType": {
+    "allOf": [
+      {
+        "$ref": "entityDataType.json#/EntityDataType"
+      }
+    ]
+  },
+  "IntegerEntityDataType": {
+    "description": "Entity field type defined in https://issues.folio.org/browse/UIPQB-7",
+    "allOf": [
+      {
+        "$ref": "entityDataType.json#/EntityDataType"
+      }
+    ]
+  },
+  "DateEntityDataType": {
+    "description": "Entity field type defined in https://issues.folio.org/browse/UIPQB-9",
+    "allOf": [
+      {
+        "$ref": "entityDataType.json#/EntityDataType"
+      }
+    ]
+  },
+  "BooleanEntityDataType": {
+    "description": "Entity field type defined in https://issues.folio.org/browse/UIPQB-8",
+    "allOf": [
+      {
+        "$ref": "entityDataType.json#/EntityDataType"
+      }
+    ]
+  },
+  "EnumEntityDataType": {
+    "description": "Entity field type defined in https://issues.folio.org/browse/UIPQB-11",
+    "allOf": [
+      {
+        "$ref": "entityDataType.json#/EntityDataType"
+      }
+    ]
+  },
+  "ObjectEntityDataTypeContainer": {
+    "type": "object",
+    "properties": {
+      "objectDefinition": {
+        "description": "The entity type describing the complex column when the data type is OBJECT.",
+        "$ref": "entityType.json#/EntityType"
+      }
+    },
+    "required": [
+      "objectDefinition"
+    ]
+  },
+  "ObjectEntityDataType": {
+    "description": "Entity field type defined in https://issues.folio.org/browse/UIPQB-10",
+    "allOf": [
+      {
+        "$ref": "entityDataType.json#/EntityDataType"
+      },
+      {
+        "$ref": "#/ObjectEntityDataTypeContainer"
+      }
+    ]
+  },
+  "ArrayEntityDataTypeContainer": {
+    "type": "object",
+    "properties": {
+      "itemDataType": {
+        "description": "The data type used for the array's items.",
+        "$ref": "entityDataType.json#/EntityDataType"
+      }
+    },
+    "required": [
+      "itemDataType"
+    ]
+  },
+  "ArrayEntityDataType": {
+    "description": "Entity field type defined in https://issues.folio.org/browse/UIPQB-6",
+    "allOf": [
+      {
+        "$ref": "entityDataType.json#/EntityDataType"
+      },
+      {
+        "$ref": "#/ArrayEntityDataTypeContainer"
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Entity Type Column Schema",
+  "description": "A definition of the entity type column",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of this column.",
+      "type": "string"
+    },
+    "dataType": {
+      "description": "The data type for this column.",
+      "$ref": "entityDataType.json#/EntityDataType"
+    },
+    "labelAlias" : {
+      "description": "The identifier used for a localized label/name for this column.",
+      "type": "string"
+    },
+    "values": {
+      "type": "array",
+      "items": {
+       "type": "object",
+        "$ref": "valueWithLabel.json"
+      }
+    }
+  },
+  "required": [
+    "name", "dataType"
+  ]
+}

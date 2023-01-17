@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Column value with label Schema",
+  "description": "A value with a label",
+  "type": "object",
+  "properties": {
+    "value": {
+      "description": "The actual value that will be used in the query",
+      "type": "string"
+    },
+    "label": {
+      "description": "The user-friendly name used in dropdowns, etc. If the label is not provided the value will be used instead.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Entity Type Relation Schema",
+  "description": "A definition of the entity type relation",
+  "type": "object",
+  "properties": {
+    "main": {
+      "$ref": "entityType.json"
+    },
+    "linked": {
+      "$ref": "entityType.json"
+    },
+    "mainColumnName": {
+      "type": "string"
+    },
+    "linkedColumnName": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "main", "linked", "mainColumnName", "linkedColumnName"
+  ]
+}

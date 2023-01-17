@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Entity Type Schema",
+  "description": "A definition of the entity types that can be used in the Query Tool",
+  "EntityType": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "description": "A UUID identifying entity type",
+        "type": "string"
+      },
+      "name": {
+        "description": "The unique name of entity type like User, Loan, Item, etc.",
+        "type": "string"
+      },
+      "labelAlias" : {
+        "description": "The identifier used for a localized label/name for this entity.",
+        "type": "string"
+      },
+      "columns": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "entityTypeColumn.json"
+        }
+      }
+    },
+    "required": [
+      "id",
+      "name",
+      "columns"
+    ]
+  }
+}
+
