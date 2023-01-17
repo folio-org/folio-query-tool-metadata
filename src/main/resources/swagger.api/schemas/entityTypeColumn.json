@@ -16,6 +16,10 @@
       "description": "The identifier used for a localized label/name for this column.",
       "type": "string"
     },
+    "visibleByDefault": {
+      "description": "Indicates if the column should be shown by default when the entity is viewed.",
+      "type": "boolean"
+    },
     "values": {
       "type": "array",
       "items": {
