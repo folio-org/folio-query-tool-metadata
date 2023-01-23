@@ -17,7 +17,7 @@
       "propertyName": "dataType"
     }
   },
-  "StringEntityDataType": {
+  "StringType": {
     "description": "Entity field type defined in https://issues.folio.org/browse/UIPQB-5",
     "allOf": [
       {
@@ -25,7 +25,7 @@
       }
     ]
   },
-  "RangedUUIDEntityDataType": {
+  "RangedUUIDType": {
     "description": "Entity field type defined in https://issues.folio.org/browse/UIPQB-2, https://issues.folio.org/browse/UIPQB-3",
     "allOf": [
       {
@@ -33,7 +33,7 @@
       }
     ]
   },
-  "OpenUUIDEntityDataType": {
+  "OpenUUIDType": {
     "description": "Entity field type defined in https://issues.folio.org/browse/UIPQB-4",
     "allOf": [
       {
@@ -41,14 +41,14 @@
       }
     ]
   },
-  "NumberEntityDataType": {
+  "NumberType": {
     "allOf": [
       {
         "$ref": "entityDataType.json#/EntityDataType"
       }
     ]
   },
-  "IntegerEntityDataType": {
+  "IntegerType": {
     "description": "Entity field type defined in https://issues.folio.org/browse/UIPQB-7",
     "allOf": [
       {
@@ -56,7 +56,7 @@
       }
     ]
   },
-  "DateEntityDataType": {
+  "DateType": {
     "description": "Entity field type defined in https://issues.folio.org/browse/UIPQB-9",
     "allOf": [
       {
@@ -64,7 +64,7 @@
       }
     ]
   },
-  "BooleanEntityDataType": {
+  "BooleanType": {
     "description": "Entity field type defined in https://issues.folio.org/browse/UIPQB-8",
     "allOf": [
       {
@@ -72,7 +72,7 @@
       }
     ]
   },
-  "EnumEntityDataType": {
+  "EnumType": {
     "description": "Entity field type defined in https://issues.folio.org/browse/UIPQB-11",
     "allOf": [
       {
@@ -80,7 +80,7 @@
       }
     ]
   },
-  "ObjectEntityDataTypeContainer": {
+  "ObjectTypeContainer": {
     "type": "object",
     "properties": {
       "objectDefinition": {
@@ -92,18 +92,18 @@
       "objectDefinition"
     ]
   },
-  "ObjectEntityDataType": {
+  "ObjectType": {
     "description": "Entity field type defined in https://issues.folio.org/browse/UIPQB-10",
     "allOf": [
       {
         "$ref": "entityDataType.json#/EntityDataType"
       },
       {
-        "$ref": "#/ObjectEntityDataTypeContainer"
+        "$ref": "#/ObjectTypeContainer"
       }
     ]
   },
-  "ArrayEntityDataTypeContainer": {
+  "ArrayTypeContainer": {
     "type": "object",
     "properties": {
       "itemDataType": {
@@ -115,14 +115,14 @@
       "itemDataType"
     ]
   },
-  "ArrayEntityDataType": {
+  "ArrayType": {
     "description": "Entity field type defined in https://issues.folio.org/browse/UIPQB-6",
     "allOf": [
       {
         "$ref": "entityDataType.json#/EntityDataType"
       },
       {
-        "$ref": "#/ArrayEntityDataTypeContainer"
+        "$ref": "#/ArrayTypeContainer"
       }
     ]
   }

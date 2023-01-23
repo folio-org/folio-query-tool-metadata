@@ -26,23 +26,23 @@ components:
       $ref: schemas/entityType.json#/EntityType
     entityDataType:
       $ref: schemas/entityDataType.json#/EntityDataType
-    stringEntityDataType:
-      $ref: schemas/entityDataType.json#/StringEntityDataType
-    rangedUUIDEntityDataType:
-      $ref: schemas/entityDataType.json#/RangedUUIDEntityDataType
-    openUUIDEntityDataType:
-      $ref: schemas/entityDataType.json#/OpenUUIDEntityDataType
-    numberEntityDataType:
-      $ref: schemas/entityDataType.json#/NumberEntityDataType
-    integerEntityDataType:
-      $ref: schemas/entityDataType.json#/IntegerEntityDataType
-    booleanEntityDataType:
-      $ref: schemas/entityDataType.json#/BooleanEntityDataType
-    dateEntityDataType:
-      $ref: schemas/entityDataType.json#/DateEntityDataType
-    enumEntityDataType:
-      $ref: schemas/entityDataType.json#/EnumEntityDataType
-    objectEntityDataType:
-      $ref: schemas/entityDataType.json#/ObjectEntityDataType
-    arrayEntityDataType:
-      $ref: schemas/entityDataType.json#/ArrayEntityDataType
+    stringType:
+      $ref: schemas/entityDataType.json#/StringType
+    rangedUUIDType:
+      $ref: schemas/entityDataType.json#/RangedUUIDType
+    openUUIDType:
+      $ref: schemas/entityDataType.json#/OpenUUIDType
+    numberType:
+      $ref: schemas/entityDataType.json#/NumberType
+    integerType:
+      $ref: schemas/entityDataType.json#/IntegerType
+    booleanType:
+      $ref: schemas/entityDataType.json#/BooleanType
+    dateType:
+      $ref: schemas/entityDataType.json#/DateType
+    enumType:
+      $ref: schemas/entityDataType.json#/EnumType
+    objectType:
+      $ref: schemas/entityDataType.json#/ObjectType
+    arrayType:
+      $ref: schemas/entityDataType.json#/ArrayType
