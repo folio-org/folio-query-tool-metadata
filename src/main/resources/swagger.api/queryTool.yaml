@@ -1,26 +1,45 @@
 openapi: 3.0.0
 info:
-  title: Query Tool API
+  title: Folio Query Tool API
   version: v1
-  description: Query Tool API
+  description: Folio Query Tool API
 
 servers:
-  - url: /to-be-changed/
+  - url: https://falcon.ci.folio.org/folio-query-tool/
 
 paths:
-  /to-be-changed:
+  /entity-types/{entity-type-id}:
     get:
-      operationId: getExample
-      description: example endpoint to generate api doc
+      operationId: getEntityType
+      description: Get definition of an Entity Type.
+      tags:
+        - folio-query-tool
+      parameters:
+        - $ref: '#/components/parameters/entity-type-id'
       responses:
         '200':
-          description: 'example endpoint result to generate api doc'
+          description: 'Definition of the requested entity type'
           content:
             application/json:
+              example: examples/entityTypeDefinition.sample
               schema:
-                type: string
+                $ref: '#/components/schemas/entityType'
+        '400':
+          $ref: '#/components/responses/badRequestResponse'
+        '500':
+          $ref: '#/components/responses/internalServerErrorResponse'
 
 components:
+  parameters:
+    entity-type-id:
+      name: entity-type-id
+      in: path
+      required: true
+      description: UUID of the entity type
+      schema:
+        type: string
+        format: UUID
+
   schemas:
     entityType:
       $ref: schemas/entityType.json#/EntityType
@@ -48,3 +67,26 @@ components:
       $ref: schemas/entityDataType.json#/ArrayType
     entityTypeDefaultSort:
       $ref: schemas/entityTypeDefaultSort.json
+    errors:
+      $ref: schemas/error/errors.json
+    error:
+      $ref: schemas/error/error.json
+    parameters:
+      $ref: schemas/error/parameters.json
+    parameter:
+      $ref: schemas/error/parameter.json
+
+  responses:
+    badRequestResponse:
+      description: Bad request errors
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/errors"
+    internalServerErrorResponse:
+      description: When unhandled exception occurred during code execution, e.g. NullPointerException
+      content:
+        application/json:
+          example: examples/unknownError.sample
+          schema:
+            $ref: "#/components/schemas/errors"
