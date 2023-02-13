@@ -46,3 +46,5 @@ components:
       $ref: schemas/entityDataType.json#/ObjectType
     arrayType:
       $ref: schemas/entityDataType.json#/ArrayType
+    entityTypeDefaultSort:
+      $ref: schemas/entityTypeDefaultSort.json

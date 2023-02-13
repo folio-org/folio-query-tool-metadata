@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Default sort criteria for an entity type",
+  "description": "A definition of default sort criteria for an entity type",
+  "type": "object",
+  "properties": {
+    "columnName": {
+      "description": "Name of the column using which entity type has to be sorted",
+      "type": "string"
+    },
+    "direction": {
+      "description": "Direction of the sort (Ascending or Descending)",
+      "type": "string",
+      "enum": ["ASC", "DESC"]
+    }
+  },
+  "required": [
+    "columnName", "direction"
+  ]
+}
