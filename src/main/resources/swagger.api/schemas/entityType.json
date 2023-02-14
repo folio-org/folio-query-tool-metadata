@@ -23,6 +23,13 @@
           "type": "object",
           "$ref": "entityTypeColumn.json"
         }
+      },
+      "defaultSort": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "entityTypeDefaultSort.json"
+        }
       }
     },
     "required": [
