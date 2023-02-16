@@ -181,11 +181,11 @@
               <generatorName>spring</generatorName>
               <modelPackage>${project.groupId}.querytool.domain.dto</modelPackage>
               <apiPackage>${project.groupId}.querytool.rest.resource</apiPackage>
-              <generateApis>false</generateApis>
+              <generateApis>true</generateApis>
               <generateApiTests>true</generateApiTests>
               <generateApiDocumentation>true</generateApiDocumentation>
               <generateModels>true</generateModels>
-              <modelsToGenerate>entityDataType,arrayType,dateType,entityTypeRelation,objectType,entityTypeColumn,enumType,booleanType,entityType,integerType,openUUIDType,stringType,numberType,rangedUUIDType,valueWithLabel,entityTypeDefaultSort</modelsToGenerate>
+              <modelsToGenerate>entityDataType,arrayType,dateType,entityTypeRelation,objectType,entityTypeColumn,enumType,booleanType,entityType,integerType,openUUIDType,stringType,numberType,rangedUUIDType,valueWithLabel,entityTypeDefaultSort,errors,error,parameters,parameter</modelsToGenerate>
               <generateModelTests>false</generateModelTests>
               <generateModelDocumentation>true</generateModelDocumentation>
               <generateSupportingFiles>true</generateSupportingFiles>
