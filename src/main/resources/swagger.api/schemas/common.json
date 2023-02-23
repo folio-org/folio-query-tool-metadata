@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "The common data structures",
+
+  "UUID": {
+    "description": "The content row represented as a map.",
+    "type": "string",
+    "format": "uuid"
+  }
+}
