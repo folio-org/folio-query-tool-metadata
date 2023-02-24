@@ -185,7 +185,7 @@
               <generateApiTests>true</generateApiTests>
               <generateApiDocumentation>true</generateApiDocumentation>
               <generateModels>true</generateModels>
-              <modelsToGenerate>entityDataType,arrayType,dateType,entityTypeRelation,objectType,entityTypeColumn,enumType,booleanType,entityType,integerType,openUUIDType,stringType,numberType,rangedUUIDType,valueWithLabel,entityTypeDefaultSort,errors,error,parameters,parameter</modelsToGenerate>
+              <modelsToGenerate>entityDataType,arrayType,dateType,entityTypeRelation,objectType,entityTypeColumn,enumType,booleanType,entityType,integerType,openUUIDType,stringType,numberType,rangedUUIDType,valueWithLabel,entityTypeDefaultSort,errors,error,parameters,parameter,resultsetPage,queryResult</modelsToGenerate>
               <generateModelTests>false</generateModelTests>
               <generateModelDocumentation>true</generateModelDocumentation>
               <generateSupportingFiles>true</generateSupportingFiles>

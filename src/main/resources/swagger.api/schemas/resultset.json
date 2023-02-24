@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "The resultset page definition",
+  "ResultsetPage": {
+    "type": "object",
+    "description": "The page with content.",
+    "properties": {
+      "content": {
+        "description": "The rows of the page.",
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "#/ResultsetContent"
+        }
+      },
+      "totalRecords": {
+        "description": "The total number of records in this resultset.",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "content",
+      "totalRecords"
+    ],
+    "additionalProperties": false
+  },
+  "ResultsetContent": {
+    "description": "The content row represented as a map.",
+    "type": "object",
+    "additionalProperties": {
+      "type": "object"
+    }
+  },
+  "QueryResult": {
+    "description": "The identifier of the query execution result.",
+    "type": "object",
+    "properties": {
+      "resultsetId": {
+        "type": "object",
+        "$ref": "common.json#/UUID"
+      }
+    },
+    "required": [
+      "content",
+      "totalRecords"
+    ],
+    "additionalProperties": false
+  }
+}

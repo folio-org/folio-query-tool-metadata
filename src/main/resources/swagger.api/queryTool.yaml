@@ -4,18 +4,15 @@ info:
   version: v1
   description: Folio Query Tool API
 
-servers:
-  - url: https://falcon.ci.folio.org/folio-query-tool/
-
 paths:
-  /entity-types/{entity-type-id}:
+  /entity-types/{entityTypeId}:
     get:
       operationId: getEntityType
       description: Get definition of an Entity Type.
       tags:
-        - folio-query-tool
+        - entity-types
       parameters:
-        - $ref: '#/components/parameters/entity-type-id'
+        - $ref: '#/components/parameters/entityTypeId'
       responses:
         '200':
           description: 'Definition of the requested entity type'
@@ -29,18 +26,117 @@ paths:
         '500':
           $ref: '#/components/responses/internalServerErrorResponse'
 
+  /resultsets/{resultsetId}:
+    get:
+      operationId: getResultSetById
+      description: Get a resultset page
+      tags:
+        - resultsets
+      parameters:
+        - $ref: '#/components/parameters/resultsetId'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/limit'
+      responses:
+        '200':
+          description: 'Pageable resultset'
+          content:
+            application/json:
+              example: examples/resultset.sample
+              schema:
+                $ref: '#/components/schemas/resultsetPage'
+        '400':
+          $ref: '#/components/responses/badRequestResponse'
+        '500':
+          $ref: '#/components/responses/internalServerErrorResponse'
+
+  /query:
+    get:
+      operationId: getTestQueryResult
+      description: Test FQL query
+      tags:
+        - fqlQuery
+      parameters:
+        - $ref: '#/components/parameters/fqlQuery'
+      responses:
+        '200':
+          description: 'The test query result'
+          content:
+            application/json:
+              example: examples/resultset.sample
+              schema:
+                $ref: '#/components/schemas/resultsetPage'
+        '400':
+          $ref: '#/components/responses/badRequestResponse'
+        '500':
+          $ref: '#/components/responses/internalServerErrorResponse'
+    post:
+      operationId: runFqlQuery
+      description: Run an FQL query and store a resultset
+      tags:
+        - fqlQuery
+      parameters:
+        - $ref: '#/components/parameters/fqlQuery'
+      responses:
+        '200':
+          description: 'The resultset identifier for the query run'
+          content:
+            application/json:
+              example: examples/queryResult.sample
+              schema:
+                $ref: '#/components/schemas/queryResult'
+        '400':
+          $ref: '#/components/responses/badRequestResponse'
+        '500':
+          $ref: '#/components/responses/internalServerErrorResponse'
+
 components:
   parameters:
-    entity-type-id:
-      name: entity-type-id
+    entityTypeId:
+      name: entityTypeId
       in: path
       required: true
       description: UUID of the entity type
       schema:
+        $ref: '#/components/schemas/UUID'
+    resultsetId:
+      name: resultsetId
+      in: path
+      required: true
+      description: UUID of the resultset
+      schema:
+        $ref: '#/components/schemas/UUID'
+    fqlQuery:
+      name: query
+      in: query
+      schema:
         type: string
-        format: UUID
+        default: cql.allRecords=1
+      required: true
+      description: A complete query expressed as a FQL string. It should contain the from part that defines the entity type and the where/criteria part.
+    offset:
+      name: offset
+      in: query
+      schema:
+        type: integer
+        default: 0
+        minimum: 0
+        maximum: 2147483647
+      required: false
+      description: Skip over a number of elements by specifying an offset value for the query
+    limit:
+      name: limit
+      in: query
+      schema:
+        type: integer
+        default: 100
+        minimum: 1
+        maximum: 2147483647
+      required: false
+      description: Limit the number of elements returned in the response
 
   schemas:
+    UUID:
+      $ref: schemas/common.json#/UUID
     entityType:
       $ref: schemas/entityType.json#/EntityType
     entityDataType:
@@ -75,6 +171,10 @@ components:
       $ref: schemas/error/parameters.json
     parameter:
       $ref: schemas/error/parameter.json
+    resultsetPage:
+      $ref: schemas/resultset.json#/ResultsetPage
+    queryResult:
+      $ref: schemas/resultset.json#/QueryResult
 
   responses:
     badRequestResponse:
