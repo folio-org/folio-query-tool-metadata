@@ -26,6 +26,28 @@ paths:
         '500':
           $ref: '#/components/responses/internalServerErrorResponse'
 
+  /entity-types/{entityTypeId}/columns/{columnName}/values:
+    get:
+      operationId: getColumnValues
+      description: Get values of an entity type column.
+      tags:
+        - entity-types
+      parameters:
+        - $ref: '#/components/parameters/entityTypeId'
+        - $ref: '#/components/parameters/columnName'
+      responses:
+        '200':
+          description: 'Values of an entity type column'
+          content:
+            application/json:
+              example: examples/columnValues.sample
+              schema:
+                $ref: '#/components/schemas/columnValues'
+        '400':
+          $ref: '#/components/responses/badRequestResponse'
+        '500':
+          $ref: '#/components/responses/internalServerErrorResponse'
+
   /resultsets/{resultsetId}:
     get:
       operationId: getResultSetById
@@ -57,6 +79,7 @@ paths:
         - fqlQuery
       parameters:
         - $ref: '#/components/parameters/fqlQuery'
+        - $ref: '#/components/parameters/entityTypeIdQueryParam'
       responses:
         '200':
           description: 'The test query result'
@@ -76,6 +99,7 @@ paths:
         - fqlQuery
       parameters:
         - $ref: '#/components/parameters/fqlQuery'
+        - $ref: '#/components/parameters/entityTypeIdQueryParam'
       responses:
         '200':
           description: 'The resultset identifier for the query run'
@@ -84,6 +108,27 @@ paths:
               example: examples/queryResult.sample
               schema:
                 $ref: '#/components/schemas/queryResult'
+        '400':
+          $ref: '#/components/responses/badRequestResponse'
+        '500':
+          $ref: '#/components/responses/internalServerErrorResponse'
+  /recordsCount:
+    get:
+      operationId: getRecordsCount
+      description: Gets the records count that matches an FQL query
+      tags:
+        - fqlQuery
+      parameters:
+        - $ref: '#/components/parameters/fqlQuery'
+        - $ref: '#/components/parameters/entityTypeIdQueryParam'
+      responses:
+        '200':
+          description: 'Total records that matches the FQL query'
+          content:
+            application/json:
+              example: examples/totalRecords.sample
+              schema:
+                $ref: '#/components/schemas/totalRecords'
         '400':
           $ref: '#/components/responses/badRequestResponse'
         '500':
@@ -98,6 +143,20 @@ components:
       description: UUID of the entity type
       schema:
         $ref: '#/components/schemas/UUID'
+    entityTypeIdQueryParam:
+      name: entityTypeId
+      in: query
+      required: true
+      description: UUID of the entity type
+      schema:
+        $ref: '#/components/schemas/UUID'
+    columnName:
+      name: columnName
+      in: path
+      required: true
+      description: Name of an entity type column
+      schema:
+        type: string
     resultsetId:
       name: resultsetId
       in: path
@@ -175,6 +234,10 @@ components:
       $ref: schemas/resultset.json#/ResultsetPage
     queryResult:
       $ref: schemas/resultset.json#/QueryResult
+    totalRecords:
+      $ref: schemas/resultset.json#/TotalRecords
+    columnValues:
+      $ref: schemas/columnValues.json
 
   responses:
     badRequestResponse:

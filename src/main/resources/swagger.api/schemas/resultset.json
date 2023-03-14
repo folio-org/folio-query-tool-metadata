@@ -19,8 +19,7 @@
       }
     },
     "required": [
-      "content",
-      "totalRecords"
+      "content"
     ],
     "additionalProperties": false
   },
@@ -41,7 +40,20 @@
       }
     },
     "required": [
-      "content",
+      "content"
+    ],
+    "additionalProperties": false
+  },
+  "TotalRecords": {
+    "description": "Total records matching a query.",
+    "type": "object",
+    "properties": {
+      "totalRecords": {
+        "description": "The total number of records matching a query.",
+        "type": "integer"
+      }
+    },
+    "required": [
       "totalRecords"
     ],
     "additionalProperties": false
