@@ -13,9 +13,13 @@
         "description": "The unique name of entity type like User, Loan, Item, etc.",
         "type": "string"
       },
-      "labelAlias" : {
+      "labelAlias": {
         "description": "The identifier used for a localized label/name for this entity.",
         "type": "string"
+      },
+      "root": {
+        "description": "Indicates if this is a root entity (true) or derived entity (false)",
+        "type": "boolean"
       },
       "columns": {
         "type": "array",
@@ -35,6 +39,7 @@
     "required": [
       "id",
       "name",
+      "root",
       "columns"
     ]
   }

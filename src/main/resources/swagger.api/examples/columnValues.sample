@@ -1,0 +1,20 @@
+{
+  "content": [
+    {
+      "label": "book",
+      "value": "025ba2c5-5e96-4667-a677-8186463aee69"
+    },
+    {
+      "label": "dvd",
+      "value": "b3d29557-c74d-403d-a279-a2ef6b3a80f6"
+    },
+    {
+      "label": "audio -- audiocassette",
+      "value": "13fbfe78-9cd4-4edd-817b-8a92292466f3"
+    },
+    {
+      "label": "video -- videotape reel",
+      "value": "c41b1127-afca-4888-8ef1-8b06e25f7f91"
+    }
+  ]
+}

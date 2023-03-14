@@ -26,6 +26,20 @@
        "type": "object",
         "$ref": "valueWithLabel.json"
       }
+    },
+    "idColumnName": {
+      "description": "Name of the corresponding ID column, if this column contains the value of an ID.",
+      "type": "string"
+    },
+    "source": {
+      "description": "Reference to the root entity type column, from where the values of this column is sourced from.",
+      "type": "object",
+      "$ref": "sourceColumn.json"
+    },
+    "valueGetter": {
+      "description": "Configuration defining how to fetch values of this column from the underlying datasource.",
+      "type": "object",
+      "$ref": "columnValueGetter.json"
     }
   },
   "required": [
