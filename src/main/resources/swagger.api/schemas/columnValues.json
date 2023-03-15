@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Label (if available) & values of an entity type column",
+  "description": "Label (if available) & values of an entity type column",
+  "type": "object",
+  "properties": {
+    "content": {
+      "description": "Array of label & value pair",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "valueWithLabel.json"
+      }
+    }
+  },
+  "required": [
+    "content"
+  ]
+}

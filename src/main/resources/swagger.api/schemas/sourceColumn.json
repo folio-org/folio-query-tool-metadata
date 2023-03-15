@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Source of an entity type column",
+  "description": "Source of an entity type column",
+  "type": "object",
+  "properties": {
+    "entityTypeId": {
+      "description": "A UUID identifying the source entity type",
+      "type": "string"
+    },
+    "columnName": {
+      "description": "Name of the source column",
+      "type": "string"
+    }
+  },
+  "required": [
+    "entityTypeId",
+    "columnName"
+  ]
+}
