@@ -35,6 +35,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/entityTypeId'
         - $ref: '#/components/parameters/columnName'
+        - $ref: '#/components/parameters/search'
       responses:
         '200':
           description: 'Values of an entity type column'
@@ -155,6 +156,13 @@ components:
       in: path
       required: true
       description: Name of an entity type column
+      schema:
+        type: string
+    search:
+      name: search
+      in: query
+      required: false
+      description: A search text that can be used to filter column values. If provided, only the values that begins with the given text will be returned in API response.
       schema:
         type: string
     resultsetId:
