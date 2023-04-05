@@ -234,8 +234,6 @@ components:
       $ref: schemas/error/errors.json
     error:
       $ref: schemas/error/error.json
-    parameters:
-      $ref: schemas/error/parameters.json
     parameter:
       $ref: schemas/error/parameter.json
     resultsetPage:
