@@ -37,5 +37,7 @@
       "instance_primary_contributor": "Paul Dukas-ww"
     }
   ],
-  "totalRecords": 1000
+  "totalRecords": 1000,
+  "status": "IN_PROGRESS",
+  "startDate": "2023-04-04T21:56:08.673+00:00"
 }
