@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "The resultset page definition",
+  "QueryDetails": {
+    "type": "object",
+    "description": "The page with content.",
+    "properties": {
+      "content": {
+        "description": "The rows of the page.",
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "#/ResultsetContent"
+        }
+      },
+      "totalRecords": {
+        "description": "The total number of records in this resultset.",
+        "type": "integer"
+      },
+      "queryId": {
+        "description": "ID of the query",
+        "type": "string",
+        "format": "UUID"
+      },
+      "fqlQuery": {
+        "description": "FQL query",
+        "type": "string"
+      },
+      "entityTypeId": {
+        "description": "ID of the entity type",
+        "type": "string",
+        "format": "UUID"
+      },
+      "status": {
+        "description": "Status of the resultset",
+        "type": "string",
+        "enum": ["IN_PROGRESS", "SUCCESS", "FAILED"]
+      },
+      "failureReason": {
+        "description": "Reason for query execution failure (if execution failed)",
+        "type": "string"
+      },
+      "startDate": {
+        "description": "Date and time when the query execution was started",
+        "type": "string",
+        "format": "date-time"
+      },
+      "endDate": {
+        "description": "Date and time when the query execution was completed",
+        "type": "string",
+        "format": "date-time"
+      }
+    },
+    "required": [
+      "entityTypeId",
+      "status",
+      "startDate",
+      "queryId",
+      "fqlQuery"
+    ],
+    "additionalProperties": false
+  },
+  "ResultsetContent": {
+    "description": "The content row represented as a map.",
+    "type": "object",
+    "additionalProperties": {
+      "type": "object"
+    }
+  },
+  "QueryIdentifier": {
+    "description": "The identifier of the query.",
+    "type": "object",
+    "properties": {
+      "queryId": {
+        "type": "object",
+        "$ref": "common.json#/UUID"
+      }
+    },
+    "additionalProperties": false
+  },
+  "SubmitQuery": {
+    "description": "Request to submit query",
+    "type": "object",
+    "properties": {
+      "fqlQuery": {
+        "type": "string"
+      },
+      "entityTypeId": {
+        "type": "object",
+        "$ref": "common.json#/UUID"
+      }
+    },
+    "required": [
+      "entityTypeId",
+      "fqlQuery"
+    ],
+    "additionalProperties": false
+  }
+}

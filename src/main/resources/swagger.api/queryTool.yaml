@@ -49,29 +49,6 @@ paths:
         '500':
           $ref: '#/components/responses/internalServerErrorResponse'
 
-  /resultsets/{resultsetId}:
-    get:
-      operationId: getResultSetById
-      description: Get a resultset page
-      tags:
-        - resultsets
-      parameters:
-        - $ref: '#/components/parameters/resultsetId'
-        - $ref: '#/components/parameters/offset'
-        - $ref: '#/components/parameters/limit'
-      responses:
-        '200':
-          description: 'Pageable resultset'
-          content:
-            application/json:
-              example: examples/resultset.sample
-              schema:
-                $ref: '#/components/schemas/resultsetPage'
-        '400':
-          $ref: '#/components/responses/badRequestResponse'
-        '500':
-          $ref: '#/components/responses/internalServerErrorResponse'
-
   /query:
     get:
       operationId: getTestQueryResult
@@ -86,9 +63,9 @@ paths:
           description: 'The test query result'
           content:
             application/json:
-              example: examples/resultset.sample
+              example: examples/queryDetails.sample
               schema:
-                $ref: '#/components/schemas/resultsetPage'
+                $ref: '#/components/schemas/queryDetails'
         '400':
           $ref: '#/components/responses/badRequestResponse'
         '500':
@@ -98,42 +75,61 @@ paths:
       description: Run an FQL query and store a resultset
       tags:
         - fqlQuery
-      parameters:
-        - $ref: '#/components/parameters/fqlQuery'
-        - $ref: '#/components/parameters/entityTypeIdQueryParam'
+      requestBody:
+        description: Query request
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/submitQuery'
       responses:
         '200':
-          description: 'The resultset identifier for the query run'
+          description: 'The identifier for the query run'
           content:
             application/json:
-              example: examples/queryResult.sample
+              example: examples/queryIdentifier.sample
               schema:
-                $ref: '#/components/schemas/queryResult'
+                $ref: '#/components/schemas/queryIdentifier'
         '400':
           $ref: '#/components/responses/badRequestResponse'
         '500':
           $ref: '#/components/responses/internalServerErrorResponse'
-  /recordsCount:
+
+  /query/{queryId}:
     get:
-      operationId: getRecordsCount
-      description: Gets the records count that matches an FQL query
+      operationId: getQuery
+      description: Get details of a submitted query, optionally including the results
       tags:
         - fqlQuery
       parameters:
-        - $ref: '#/components/parameters/fqlQuery'
-        - $ref: '#/components/parameters/entityTypeIdQueryParam'
+        - $ref: '#/components/parameters/queryId'
+        - $ref: '#/components/parameters/includeResults'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/limit'
       responses:
         '200':
-          description: 'Total records that matches the FQL query'
+          description: 'Details of the submitted query'
           content:
             application/json:
-              example: examples/totalRecords.sample
+              example: examples/queryDetails.sample
               schema:
-                $ref: '#/components/schemas/totalRecords'
+                $ref: '#/components/schemas/queryDetails'
         '400':
           $ref: '#/components/responses/badRequestResponse'
         '500':
           $ref: '#/components/responses/internalServerErrorResponse'
+    delete:
+      operationId: deleteQuery
+      description: Delete a query and its results
+      tags:
+        - fqlQuery
+      parameters:
+        - $ref: '#/components/parameters/queryId'
+      responses:
+        '204':
+          description: Query has been deleted
+        '404':
+          description: Query with id not found
 
 components:
   parameters:
@@ -165,19 +161,25 @@ components:
       description: A search text that can be used to filter column values. If provided, only the values that begins with the given text will be returned in API response.
       schema:
         type: string
-    resultsetId:
-      name: resultsetId
+    queryId:
+      name: queryId
       in: path
       required: true
-      description: UUID of the resultset
+      description: UUID of the query
       schema:
         $ref: '#/components/schemas/UUID'
+    includeResults:
+      name: includeResults
+      in: query
+      required: false
+      description: Indicates if query results has to be included in the query details response
+      schema:
+        type: boolean
     fqlQuery:
       name: query
       in: query
       schema:
         type: string
-        default: cql.allRecords=1
       required: true
       description: A complete query expressed as a FQL string. It should contain the from part that defines the entity type and the where/criteria part.
     offset:
@@ -240,12 +242,14 @@ components:
       $ref: schemas/error/parameter.json
     resultsetPage:
       $ref: schemas/resultset.json#/ResultsetPage
-    queryResult:
-      $ref: schemas/resultset.json#/QueryResult
-    totalRecords:
-      $ref: schemas/resultset.json#/TotalRecords
+    queryDetails:
+      $ref: schemas/query.json#/QueryDetails
+    queryIdentifier:
+      $ref: schemas/query.json#/QueryIdentifier
     columnValues:
       $ref: schemas/columnValues.json
+    submitQuery:
+      $ref: schemas/query.json#/SubmitQuery
 
   responses:
     badRequestResponse:
