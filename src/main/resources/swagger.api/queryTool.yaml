@@ -51,28 +51,30 @@ paths:
 
   /query:
     get:
-      operationId: getTestQueryResult
-      description: Test FQL query
+      operationId: runFqlQuery
+      description: Runs an FQL query
       tags:
         - fqlQuery
       parameters:
         - $ref: '#/components/parameters/fqlQuery'
         - $ref: '#/components/parameters/entityTypeIdQueryParam'
+        - $ref: '#/components/parameters/afterId'
+        - $ref: '#/components/parameters/limit'
       responses:
         '200':
-          description: 'The test query result'
+          description: Query result
           content:
             application/json:
-              example: examples/queryDetails.sample
+              example: examples/resultsetPage.sample
               schema:
-                $ref: '#/components/schemas/queryDetails'
+                $ref: '#/components/schemas/resultsetPage'
         '400':
           $ref: '#/components/responses/badRequestResponse'
         '500':
           $ref: '#/components/responses/internalServerErrorResponse'
     post:
-      operationId: runFqlQuery
-      description: Run an FQL query and store a resultset
+      operationId: runFqlQueryAsync
+      description: Runs an FQL query asynchronously
       tags:
         - fqlQuery
       requestBody:
@@ -202,6 +204,13 @@ components:
         maximum: 2147483647
       required: false
       description: Limit the number of elements returned in the response
+    afterId:
+      name: afterId
+      in: query
+      schema:
+        $ref: '#/components/schemas/UUID'
+      required: false
+      description: ID of the last element from the previous query
 
   schemas:
     UUID:
