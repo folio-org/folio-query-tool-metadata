@@ -34,7 +34,7 @@
       "status": {
         "description": "Status of the resultset",
         "type": "string",
-        "enum": ["IN_PROGRESS", "SUCCESS", "FAILED"]
+        "enum": ["IN_PROGRESS", "SUCCESS", "FAILED", "CANCELLED"]
       },
       "failureReason": {
         "description": "Reason for query execution failure (if execution failed)",
