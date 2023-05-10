@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "content": {
-      "description": "Array of label & value pair",
+      "description": "Array of label and value pair",
       "type": "array",
       "items": {
         "type": "object",
