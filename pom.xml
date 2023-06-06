@@ -59,6 +59,8 @@
           <artifactId>spring-boot-starter-logging</artifactId>
         </exclusion>
       </exclusions>
+      <!-- Making this dependency optional to avoid lib-frm-query-processor having transitive dependency on spring -->
+      <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.projectlombok</groupId>
