@@ -274,3 +274,4 @@ components:
           example: examples/unknownError.sample
           schema:
             $ref: "#/components/schemas/errors"
+
