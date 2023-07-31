@@ -5,7 +5,6 @@
   "EntityDataType": {
     "type": "object",
     "properties": {
-      "description": "The technical string property used as a discriminator. It contains the name of a particular entity data type.",
       "dataType": {
         "type": "string"
       }
