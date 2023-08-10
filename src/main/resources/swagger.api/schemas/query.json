@@ -1,6 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "The resultset page definition",
+  "title": "The query definition",
+  "description": "The query definition",
   "QueryDetails": {
     "type": "object",
     "description": "The page with content.",
@@ -30,6 +31,13 @@
         "description": "ID of the entity type",
         "type": "string",
         "format": "UUID"
+      },
+      "fields": {
+        "description": "Fields to be included in query results",
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
       },
       "status": {
         "description": "Status of the resultset",
@@ -88,6 +96,13 @@
       "entityTypeId": {
         "type": "object",
         "$ref": "common.json#/UUID"
+      },
+      "fields": {
+        "description": "Fields to be included in query results",
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
       }
     },
     "required": [

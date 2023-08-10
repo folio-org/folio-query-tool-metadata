@@ -58,6 +58,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/fqlQuery'
         - $ref: '#/components/parameters/entityTypeIdQueryParam'
+        - $ref: '#/components/parameters/fields'
         - $ref: '#/components/parameters/afterId'
         - $ref: '#/components/parameters/limit'
       responses:
@@ -184,6 +185,15 @@ components:
         type: string
       required: true
       description: A complete query expressed as a FQL string. It should contain the from part that defines the entity type and the where/criteria part.
+    fields:
+      name: fields
+      in: query
+      schema:
+        type: array
+        items:
+          type: string
+      required: false
+      description: fields to include in the query results
     offset:
       name: offset
       in: query

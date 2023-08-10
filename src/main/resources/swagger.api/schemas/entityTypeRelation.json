@@ -5,15 +5,19 @@
   "type": "object",
   "properties": {
     "main": {
+      "description": "The main entity type in th relation",
       "$ref": "entityType.json"
     },
     "linked": {
+      "description": "The linked entity type in the relation",
       "$ref": "entityType.json"
     },
     "mainColumnName": {
+      "description": "Name of the column belonging to the main entity type",
       "type": "string"
     },
     "linkedColumnName": {
+      "description": "Name of the column belonging to the linked entity type",
       "type": "string"
     }
   },
