@@ -133,7 +133,51 @@ paths:
           description: Query has been deleted
         '404':
           description: Query with id not found
-
+  /query/{queryId}/sortedIds:
+    get:
+      operationId: getSortedIds
+      description: Get ids of query results in sorted order
+      tags:
+        - fqlQuery
+      parameters:
+        - $ref: '#/components/parameters/queryId'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/limit'
+      responses:
+        '200':
+          description: 'Details of the submitted query'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/queryResultIds'
+        '400':
+          $ref: '#/components/responses/badRequestResponse'
+        '500':
+          $ref: '#/components/responses/internalServerErrorResponse'
+  /query/contents:
+    post:
+      tags:
+        - fqlQuery
+      operationId: getContents
+      description: get contents for list of ids
+      requestBody:
+        description: Contents request
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/contentsRequest'
+      responses:
+        '200':
+          description: A page of list contents
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/contents'
+        '400':
+          $ref: '#/components/responses/badRequestResponse'
+        '500':
+          $ref: '#/components/responses/internalServerErrorResponse'
 components:
   parameters:
     entityTypeId:
@@ -269,6 +313,23 @@ components:
       $ref: schemas/columnValues.json
     submitQuery:
       $ref: schemas/query.json#/SubmitQuery
+    contentsRequest:
+      $ref: schemas/query.json#/ContentsRequest
+    queryResultIds:
+      type: array
+      items:
+        type: string
+        format: UUID
+    fields:
+      type: array
+      items:
+        type: string
+    contents:
+      type: array
+      items:
+        type: object
+        additionalProperties:
+          type: object
 
   responses:
     badRequestResponse:
