@@ -13,6 +13,7 @@ paths:
         - entity-types
       parameters:
         - $ref: '#/components/parameters/entityTypeId'
+        - $ref: '#/components/parameters/search'
       responses:
         '200':
           description: 'Definition of the requested entity type'
