@@ -110,5 +110,36 @@
       "fqlQuery"
     ],
     "additionalProperties": false
+  },
+  "ContentsRequest": {
+    "description": "Request for a set of contents",
+    "type": "object",
+    "properties": {
+      "entityTypeId": {
+        "type": "object",
+        "$ref": "common.json#/UUID"
+      },
+      "fields": {
+        "description": "Fields to be included in results",
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "ids": {
+        "description": "Ids to retrieve results for",
+        "type": "array",
+        "items": {
+          "type": "string",
+          "format": "UUID"
+        }
+      }
+    },
+    "required": [
+      "entityTypeId",
+      "fields",
+      "ids"
+    ],
+    "additionalProperties": false
   }
 }
