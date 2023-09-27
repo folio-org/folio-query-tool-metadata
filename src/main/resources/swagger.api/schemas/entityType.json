@@ -29,21 +29,18 @@
         "description": "The IDs of the entity types that encompass a subset of the columns in this particular entity type.",
         "type": "array",
         "items": {
-          "type": "object",
           "$ref": "common.json#/UUID"
         }
       },
       "columns": {
         "type": "array",
         "items": {
-          "type": "object",
           "$ref": "entityTypeColumn.json"
         }
       },
       "defaultSort": {
         "type": "array",
         "items": {
-          "type": "object",
           "$ref": "entityTypeDefaultSort.json"
         }
       }

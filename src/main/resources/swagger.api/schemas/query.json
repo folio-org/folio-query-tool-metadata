@@ -10,7 +10,6 @@
         "description": "The rows of the page.",
         "type": "array",
         "items": {
-          "type": "object",
           "$ref": "#/ResultsetContent"
         }
       },
@@ -80,7 +79,6 @@
     "type": "object",
     "properties": {
       "queryId": {
-        "type": "object",
         "$ref": "common.json#/UUID"
       }
     },
@@ -94,7 +92,6 @@
         "type": "string"
       },
       "entityTypeId": {
-        "type": "object",
         "$ref": "common.json#/UUID"
       },
       "fields": {
@@ -116,7 +113,6 @@
     "type": "object",
     "properties": {
       "entityTypeId": {
-        "type": "object",
         "$ref": "common.json#/UUID"
       },
       "fields": {

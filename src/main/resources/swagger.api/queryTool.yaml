@@ -219,7 +219,7 @@ components:
       name: includeResults
       in: query
       required: false
-      description: Indicates if query results has to be included in the query details response
+      description: Indicates if query results should be included in the query details response
       schema:
         type: boolean
     fqlQuery:
