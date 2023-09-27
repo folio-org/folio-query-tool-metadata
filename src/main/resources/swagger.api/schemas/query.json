@@ -19,8 +19,7 @@
       },
       "queryId": {
         "description": "ID of the query",
-        "type": "string",
-        "format": "UUID"
+        "type": "string"
       },
       "fqlQuery": {
         "description": "FQL query",
@@ -28,8 +27,7 @@
       },
       "entityTypeId": {
         "description": "ID of the entity type",
-        "type": "string",
-        "format": "UUID"
+        "type": "string"
       },
       "fields": {
         "description": "Fields to be included in query results",

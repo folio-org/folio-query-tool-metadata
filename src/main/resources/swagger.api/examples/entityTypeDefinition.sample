@@ -1,7 +1,9 @@
 {
-    "id" : 0cb79a4c-f7eb-4941-a104-745224ae0292,
+    "id" : "0cb79a4c-f7eb-4941-a104-745224ae0292",
     "name":"item_details",
     "labelAlias" : "Item",
+    "private": false,
+    "root": true,
     "columns": [
         {
             "name": "id",

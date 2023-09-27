@@ -43,4 +43,4 @@ jobs:
           python3 folio-tools/api-schema-lint/api_schema_lint.py \
             --loglevel info \
             --directories ${{ env.API_DIRECTORIES }} \
-            --excludes ${{ env.API_EXCLUDES }}
+            --excludes ${{ env.API_EXCLUDES }} \
