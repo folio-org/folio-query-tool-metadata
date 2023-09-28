@@ -8,7 +8,6 @@
       "description": "Array of label and value pair",
       "type": "array",
       "items": {
-        "type": "object",
         "$ref": "valueWithLabel.json"
       }
     }

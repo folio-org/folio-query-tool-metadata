@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Source of an entity type column",
-  "description": "Source of an entity type column",
+  "description": "Source of an entity type column, from where the values for the column can be derived",
   "type": "object",
   "properties": {
     "entityTypeId": {
