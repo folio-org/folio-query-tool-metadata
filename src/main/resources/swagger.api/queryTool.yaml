@@ -47,8 +47,10 @@ paths:
           content:
             application/json:
               example:
-                externalValue:
-                  $ref: examples/columnValues.sample
+                example:
+                  content:
+                    - id: 0cb79a4c-f7eb-4941-a104-745224ae0292
+                      name: item_status
               schema:
                 $ref: '#/components/schemas/columnValues'
         '400':
