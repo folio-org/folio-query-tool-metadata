@@ -18,7 +18,12 @@ paths:
           description: 'Definition of the requested entity type'
           content:
             application/json:
-              example: examples/entityTypeDefinition.sample
+              example:
+                id: 0cb79a4c-f7eb-4941-a104-745224ae0292
+                name: item_details
+                private: false
+                root: true
+                columns: []
               schema:
                 $ref: '#/components/schemas/entityType'
         '400':
@@ -29,7 +34,7 @@ paths:
   /entity-types/{entityTypeId}/columns/{columnName}/values:
     get:
       operationId: getColumnValues
-      description: Get values of an entity type column.
+      description: Get the values of an entity type column.
       tags:
         - entity-types
       parameters:
@@ -41,7 +46,10 @@ paths:
           description: 'Values of an entity type column'
           content:
             application/json:
-              example: examples/columnValues.sample
+              example:
+                content:
+                  - value: item_status
+                    name: Item Status
               schema:
                 $ref: '#/components/schemas/columnValues'
         '400':
@@ -66,7 +74,13 @@ paths:
           description: Query result
           content:
             application/json:
-              example: examples/resultsetPage.sample
+              example:
+                content:
+                  - id:
+                      type: object
+                    item_status:
+                      type: object
+                totalRecords: 1
               schema:
                 $ref: '#/components/schemas/resultsetPage'
         '400':
@@ -90,7 +104,8 @@ paths:
           description: 'The identifier for the query run'
           content:
             application/json:
-              example: examples/queryIdentifier.sample
+              example:
+                queryId: 37140576-be84-1a0e-7546-0912d8320019
               schema:
                 $ref: '#/components/schemas/queryIdentifier'
         '400':
@@ -114,7 +129,12 @@ paths:
           description: 'Details of the submitted query'
           content:
             application/json:
-              example: examples/queryDetails.sample
+              example:
+                entityTypeId: 0cb79a4c-f7eb-4941-a104-745224ae0292
+                fqlQuery: user_active == true
+                queryId: 37140576-be84-1a0e-7546-0912d8320019
+                startDate: 2023-04-04T21:56:08.673+00:00
+                status: IN_PROGRESS
               schema:
                 $ref: '#/components/schemas/queryDetails'
         '400':
@@ -342,7 +362,11 @@ components:
       description: When unhandled exception occurred during code execution, e.g. NullPointerException
       content:
         application/json:
-          example: examples/unknownError.sample
+          example:
+            errors:
+              - message: Unexpected error
+                code: unexpected.error
+            total_records: 1
           schema:
             $ref: "#/components/schemas/errors"
 
