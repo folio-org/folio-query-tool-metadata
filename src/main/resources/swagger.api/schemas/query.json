@@ -100,6 +100,10 @@
         "items": {
           "type": "string"
         }
+      },
+      "sortResults": {
+        "description": "Whether to sort results based on entity type's sort criteria",
+        "type": "boolean"
       }
     },
     "required": [
