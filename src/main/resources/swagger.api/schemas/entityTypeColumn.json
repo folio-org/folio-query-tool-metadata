@@ -37,7 +37,7 @@
     },
     "valueGetter": {
       "description": "Configuration defining how to fetch values of this column from the underlying datasource.",
-      "$ref": "columnValueGetter.json"
+      "type": "string"
     },
     "filterValueGetter": {
       "description": "Configuration defining how to filter values of this column from the underlying datasource when indexed values aren't very user-friendly.",
