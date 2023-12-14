@@ -43,6 +43,14 @@
         "items": {
           "$ref": "entityTypeDefaultSort.json"
         }
+      },
+      "fromClause": {
+        "description": "FROM clause containing all src views that need to be joined to query this entity type",
+        "type": "string"
+      },
+      "idView": {
+        "description": "View from which the content IDs for this entity type are extracted",
+        "type": "string"
       }
     },
     "required": [
