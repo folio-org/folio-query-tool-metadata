@@ -51,6 +51,13 @@
       "idView": {
         "description": "View from which the content IDs for this entity type are extracted",
         "type": "string"
+      },
+      "groupByFields": {
+        "description": "Ordered list of fields used in the GROUP BY clause for this entity type",
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
       }
     },
     "required": [
