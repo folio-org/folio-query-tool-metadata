@@ -42,6 +42,10 @@
     "filterValueGetter": {
       "description": "Configuration defining how to filter values of this column from the underlying datasource when indexed values aren't very user-friendly.",
       "type": "string"
+    },
+    "valueFunction": {
+      "description": "Configuration defining how to transform a static value for comparison with values produced by the filterValueGetter. This is useful when the filterValueGetter does extra processing that is not visible to the user. The static value can be referenced with ':value'",
+      "type": "string"
     }
   },
   "required": [
