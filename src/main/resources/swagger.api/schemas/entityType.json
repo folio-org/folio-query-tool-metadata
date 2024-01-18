@@ -32,6 +32,11 @@
           "$ref": "common.json#/UUID"
         }
       },
+      "customFieldEntityTypeId": {
+        "description": "The IDs of the custom field entity type ",
+        "type": "string",
+        "format": "UUID"
+      },
       "columns": {
         "type": "array",
         "items": {
@@ -58,6 +63,10 @@
         "items": {
           "type": "string"
         }
+      },
+      "sourceView": {
+        "description": "View from which the dynamic columns for this entity type are extracted",
+        "type": "string"
       }
     },
     "required": [
