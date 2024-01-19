@@ -34,8 +34,7 @@
       },
       "customFieldEntityTypeId": {
         "description": "The IDs of the custom field entity type ",
-        "type": "string",
-        "format": "UUID"
+        "type": "string"
       },
       "columns": {
         "type": "array",
