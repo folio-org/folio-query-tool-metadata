@@ -12,7 +12,7 @@
       "description": "The data type for this column.",
       "$ref": "entityDataType.json#/EntityDataType"
     },
-    "labelAlias" : {
+    "labelAlias": {
       "description": "The identifier used for a localized label/name for this column.",
       "type": "string"
     },

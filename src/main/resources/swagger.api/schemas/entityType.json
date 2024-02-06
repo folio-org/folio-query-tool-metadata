@@ -66,6 +66,10 @@
       "sourceView": {
         "description": "View from which the dynamic columns for this entity type are extracted",
         "type": "string"
+      },
+      "sourceViewExtractor": {
+        "description": "Getting the base source of the custom field",
+        "type": "string"
       }
     },
     "required": [
