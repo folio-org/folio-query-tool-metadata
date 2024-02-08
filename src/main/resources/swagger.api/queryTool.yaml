@@ -311,6 +311,10 @@ components:
       $ref: schemas/entityDataType.json#/EnumType
     objectType:
       $ref: schemas/entityDataType.json#/ObjectType
+    objectTypeContainer:
+      $ref: schemas/entityDataType.json#/ObjectTypeContainer
+    nestedObjectProperty:
+      $ref: schemas/entityDataType.json#/NestedObjectProperty
     arrayType:
       $ref: schemas/entityDataType.json#/ArrayType
     entityTypeDefaultSort:

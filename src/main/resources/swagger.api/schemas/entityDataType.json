@@ -9,9 +9,7 @@
         "type": "string"
       }
     },
-    "required": [
-      "dataType"
-    ],
+    "required": ["dataType"],
     "discriminator": {
       "propertyName": "dataType"
     }
@@ -79,18 +77,6 @@
       }
     ]
   },
-  "ObjectTypeContainer": {
-    "type": "object",
-    "properties": {
-      "objectDefinition": {
-        "description": "The entity type describing the complex column when the data type is OBJECT.",
-        "$ref": "entityType.json#/EntityType"
-      }
-    },
-    "required": [
-      "objectDefinition"
-    ]
-  },
   "ObjectType": {
     "description": "Entity field type defined in https://issues.folio.org/browse/UIPQB-10",
     "allOf": [
@@ -102,6 +88,49 @@
       }
     ]
   },
+  "ObjectTypeContainer": {
+    "type": "object",
+    "properties": {
+      "properties": {
+        "description": "A list of this object's properties",
+        "type": "array",
+        "items": {
+          "$ref": "entityDataType.json#/NestedObjectProperty"
+        }
+      }
+    },
+    "required": ["properties"]
+  },
+  "NestedObjectProperty": {
+    "type": "object",
+    "description": "A property within an object",
+    "properties": {
+      "name": {
+        "description": "The name of the property",
+        "type": "string"
+      },
+      "key": {
+        "description": "The key of the property inside the object",
+        "type": "string"
+      },
+      "labelAlias": {
+        "description": "The human-readable label for this property; should be unqualified (e.g. 'Name' instead of 'User's Name')",
+        "type": "string"
+      },
+      "dataType": {
+        "description": "The data type of the property",
+        "$ref": "entityDataType.json#/EntityDataType"
+      },
+      "values": {
+        "type": "array",
+        "description": "Array of values for this column",
+        "items": {
+          "$ref": "valueWithLabel.json"
+        }
+      }
+    },
+    "required": ["name", "key", "dataType"]
+  },
   "ArrayTypeContainer": {
     "type": "object",
     "properties": {
@@ -110,9 +139,7 @@
         "$ref": "entityDataType.json#/EntityDataType"
       }
     },
-    "required": [
-      "itemDataType"
-    ]
+    "required": ["itemDataType"]
   },
   "ArrayType": {
     "description": "Entity field type defined in https://issues.folio.org/browse/UIPQB-6",
