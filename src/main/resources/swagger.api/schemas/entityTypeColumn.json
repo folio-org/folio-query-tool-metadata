@@ -35,6 +35,10 @@
       "description": "Reference to the root entity type column, from where the values of this column are sourced.",
       "$ref": "sourceColumn.json"
     },
+    "valueSourceApi": {
+      "description": "Configuration defining where the available values for a column can be accessed",
+      "$ref": "valueSourceApi.json"
+    },
     "valueGetter": {
       "description": "Configuration defining how to fetch values of this column from the underlying datasource.",
       "type": "string"

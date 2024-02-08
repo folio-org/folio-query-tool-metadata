@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Value source API config",
+  "description": "Configuration for a column's value source API, where the available values can be accessed",
+  "type": "object",
+  "properties": {
+    "path": {
+      "description": "Relative path to the FOLIO module API endpoint that can provide the available column values. Example: 'material-types'",
+      "type": "string"
+    },
+    "valueJsonPath": {
+      "description": "JsonPath defining how to access the values provided by the API",
+      "type": "string"
+    },
+    "labelJsonPath": {
+      "description": "JsonPath defining how to access the labels for the values provided by the API",
+      "type": "string"
+    }
+  },
+  "required": [
+    "path",
+    "valueJsonPath",
+    "labelJsonPath"
+  ]
+}
