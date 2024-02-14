@@ -282,7 +282,9 @@ components:
       name: afterId
       in: query
       schema:
-        $ref: '#/components/schemas/UUID'
+        type: array
+        items:
+          type: string
       required: false
       description: ID of the last element from the previous query
 
@@ -342,8 +344,9 @@ components:
     queryResultIds:
       type: array
       items:
-        type: string
-        format: UUID
+        type: array
+        items:
+          type: string
     fields:
       type: array
       items:
