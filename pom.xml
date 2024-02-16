@@ -198,7 +198,6 @@
                 <interfaceOnly>true</interfaceOnly>
                 <useSpringBoot3>true</useSpringBoot3>
                 <useTags>true</useTags>
-                <openapiNormalizer>REF_AS_PARENT_IN_ALLOF=true</openapiNormalizer>
               </configOptions>
               <openapiNormalizer>REF_AS_PARENT_IN_ALLOF=true</openapiNormalizer>
             </configuration>
