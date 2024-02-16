@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Source/query column details",
+  "description": "Properties for sourcing/querying a column or nested property",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of this field.",
+      "type": "string"
+    },
+    "dataType": {
+      "description": "The data type for this field.",
+      "$ref": "entityDataType.json#/EntityDataType"
+    },
+    "labelAlias": {
+      "description": "The identifier used for a localized label/name for this column.",
+      "type": "string"
+    },
+    "source": {
+      "description": "Reference to the root entity type column, from where the values of this column are sourced.",
+      "$ref": "sourceColumn.json"
+    },
+    "valueSourceApi": {
+      "description": "Configuration defining where the available values for a column can be accessed",
+      "$ref": "valueSourceApi.json"
+    },
+    "valueGetter": {
+      "description": "Configuration defining how to fetch values of this column from the underlying datasource.",
+      "type": "string"
+    },
+    "filterValueGetter": {
+      "description": "Configuration defining how to filter values of this column from the underlying datasource when indexed values aren't very user-friendly.",
+      "type": "string"
+    },
+    "valueFunction": {
+      "description": "Configuration defining how to transform a static value for comparison with values produced by the filterValueGetter. This is useful when the filterValueGetter does extra processing that is not visible to the user. The static value can be referenced with ':value'",
+      "type": "string"
+    },
+    "values": {
+      "type": "array",
+      "description": "Array of values for this column",
+      "items": {
+        "$ref": "valueWithLabel.json"
+      }
+    }
+  },
+  "required": ["name", "dataType"]
+}
