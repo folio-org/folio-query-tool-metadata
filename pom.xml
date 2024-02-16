@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.0.5</version>
+    <version>3.2.2</version>
     <relativePath /> <!-- lookup parent from repository -->
   </parent>
   <groupId>org.folio</groupId>
@@ -18,7 +18,7 @@
 
   <properties>
     <java.version>17</java.version>
-    <openapi-generator.version>6.2.1</openapi-generator.version>
+    <openapi-generator.version>6.6.0</openapi-generator.version>
     <maven-compat.version>3.8.7</maven-compat.version>
     <yaml.file>${project.basedir}/src/main/resources/swagger.api/queryTool.yaml</yaml.file>
     <lombok.version>1.18.24</lombok.version>
@@ -76,7 +76,17 @@
           <groupId>org.slf4j</groupId>
           <artifactId>slf4j-simple</artifactId>
         </exclusion>
+        <exclusion>
+          <groupId>io.swagger.core.v3</groupId>
+          <artifactId>swagger-annotations</artifactId>
+        </exclusion>
       </exclusions>
+    </dependency>
+    <!-- openapi-generator pulls in an old version missing required features -->
+    <dependency>
+      <groupId>io.swagger.core.v3</groupId>
+      <artifactId>swagger-core-jakarta</artifactId>
+      <version>2.2.7</version>
     </dependency>
     <dependency>
       <groupId>org.openapitools</groupId>
@@ -187,7 +197,7 @@
               <generateApiTests>true</generateApiTests>
               <generateApiDocumentation>true</generateApiDocumentation>
               <generateModels>true</generateModels>
-              <modelsToGenerate>entityDataType,arrayType,dateType,entityTypeRelation,objectType,nestedObjectProperty,entityTypeColumn,enumType,booleanType,entityType,integerType,openUUIDType,stringType,numberType,rangedUUIDType,valueWithLabel,entityTypeDefaultSort,errors,error,parameters,parameter,resultsetPage,queryDetails,queryIdentifier,sourceColumn,valueSourceApi,columnValues,columnValueGetter,submitQuery,contentsRequest</modelsToGenerate>
+              <modelsToGenerate>entityDataType,arrayType,dateType,entityTypeRelation,objectType,nestedObjectProperty,entityTypeColumn,enumType,booleanType,entityType,integerType,openUUIDType,stringType,numberType,rangedUUIDType,valueWithLabel,entityTypeDefaultSort,errors,error,parameters,parameter,resultsetPage,queryDetails,queryIdentifier,sourceColumn,valueSourceApi,columnValues,columnValueGetter,submitQuery,contentsRequest,field</modelsToGenerate>
               <generateModelTests>false</generateModelTests>
               <generateModelDocumentation>true</generateModelDocumentation>
               <generateSupportingFiles>true</generateSupportingFiles>
@@ -199,6 +209,7 @@
                 <useSpringBoot3>true</useSpringBoot3>
                 <useTags>true</useTags>
               </configOptions>
+              <openapiNormalizer>REF_AS_PARENT_IN_ALLOF=true</openapiNormalizer>
             </configuration>
           </execution>
         </executions>

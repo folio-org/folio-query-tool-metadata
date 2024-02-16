@@ -2,65 +2,31 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Entity Type Column Schema",
   "description": "A definition of the entity type column",
-  "type": "object",
-  "properties": {
-    "name": {
-      "description": "The name of this column.",
-      "type": "string"
+  "allOf": [
+    {
+      "$ref": "./field.json"
     },
-    "dataType": {
-      "description": "The data type for this column.",
-      "$ref": "entityDataType.json#/EntityDataType"
-    },
-    "labelAlias": {
-      "description": "The identifier used for a localized label/name for this column.",
-      "type": "string"
-    },
-    "visibleByDefault": {
-      "description": "Indicates if the column should be shown by default when the entity is viewed.",
-      "type": "boolean"
-    },
-    "values": {
-      "type": "array",
-      "description": "Array of values for this column",
-      "items": {
-        "$ref": "valueWithLabel.json"
-      }
-    },
-    "idColumnName": {
-      "description": "Name of the corresponding ID column, if this column contains the value of an ID.",
-      "type": "string"
-    },
-    "source": {
-      "description": "Reference to the root entity type column, from where the values of this column are sourced.",
-      "$ref": "sourceColumn.json"
-    },
-    "valueSourceApi": {
-      "description": "Configuration defining where the available values for a column can be accessed",
-      "$ref": "valueSourceApi.json"
-    },
-    "valueGetter": {
-      "description": "Configuration defining how to fetch values of this column from the underlying datasource.",
-      "type": "string"
-    },
-    "filterValueGetter": {
-      "description": "Configuration defining how to filter values of this column from the underlying datasource when indexed values aren't very user-friendly.",
-      "type": "string"
-    },
-    "valueFunction": {
-      "description": "Configuration defining how to transform a static value for comparison with values produced by the filterValueGetter. This is useful when the filterValueGetter does extra processing that is not visible to the user. The static value can be referenced with ':value'",
-      "type": "string"
-    },
-    "isCustomField": {
-      "description": "Indicates if the column belongs to the custom field.",
-      "type": "boolean"
-    },
-    "isIdColumn": {
-      "description": "Indicates if the column is part of the unique identifier for this entity type",
-      "type": "boolean"
+    {
+      "type": "object",
+      "properties": {
+        "visibleByDefault": {
+          "description": "Indicates if the column should be shown by default when the entity is viewed.",
+          "type": "boolean"
+        },
+        "idColumnName": {
+          "description": "Name of the corresponding ID column, if this column contains the value of an ID.",
+          "type": "string"
+        },
+        "isCustomField": {
+          "description": "Indicates if the column belongs to the custom field.",
+          "type": "boolean"
+        },
+        "isIdColumn": {
+          "description": "Indicates if the column is part of the unique identifier for this entity type",
+          "type": "boolean"
+        }
+      },
+      "required": []
     }
-  },
-  "required": [
-    "name", "dataType"
   ]
 }

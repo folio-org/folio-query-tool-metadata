@@ -102,34 +102,11 @@
     "required": ["properties"]
   },
   "NestedObjectProperty": {
-    "type": "object",
-    "description": "A property within an object",
-    "properties": {
-      "name": {
-        "description": "The name of the property",
-        "type": "string"
-      },
-      "key": {
-        "description": "The key of the property inside the object",
-        "type": "string"
-      },
-      "labelAlias": {
-        "description": "The human-readable label for this property; should be unqualified (e.g. 'Name' instead of 'User's Name')",
-        "type": "string"
-      },
-      "dataType": {
-        "description": "The data type of the property",
-        "$ref": "entityDataType.json#/EntityDataType"
-      },
-      "values": {
-        "type": "array",
-        "description": "Array of values for this column",
-        "items": {
-          "$ref": "valueWithLabel.json"
-        }
+    "allOf": [
+      {
+        "$ref": "./field.json"
       }
-    },
-    "required": ["name", "key", "dataType"]
+    ]
   },
   "ArrayTypeContainer": {
     "type": "object",
