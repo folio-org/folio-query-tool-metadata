@@ -197,7 +197,7 @@
               <generateApiTests>true</generateApiTests>
               <generateApiDocumentation>true</generateApiDocumentation>
               <generateModels>true</generateModels>
-              <modelsToGenerate>entityDataType,arrayType,dateType,entityTypeRelation,objectType,nestedObjectProperty,entityTypeColumn,enumType,booleanType,entityType,integerType,openUUIDType,stringType,numberType,rangedUUIDType,valueWithLabel,entityTypeDefaultSort,errors,error,parameters,parameter,resultsetPage,queryDetails,queryIdentifier,sourceColumn,valueSourceApi,columnValues,columnValueGetter,submitQuery,contentsRequest,sourceableField</modelsToGenerate>
+              <modelsToGenerate>entityDataType,arrayType,dateType,entityTypeRelation,objectType,nestedObjectProperty,entityTypeColumn,enumType,booleanType,entityType,integerType,openUUIDType,stringType,numberType,rangedUUIDType,valueWithLabel,entityTypeDefaultSort,errors,error,parameters,parameter,resultsetPage,queryDetails,queryIdentifier,sourceColumn,valueSourceApi,columnValues,columnValueGetter,submitQuery,contentsRequest,field</modelsToGenerate>
               <generateModelTests>false</generateModelTests>
               <generateModelDocumentation>true</generateModelDocumentation>
               <generateSupportingFiles>true</generateSupportingFiles>

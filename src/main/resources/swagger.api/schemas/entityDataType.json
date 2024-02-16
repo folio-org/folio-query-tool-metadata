@@ -104,7 +104,7 @@
   "NestedObjectProperty": {
     "allOf": [
       {
-        "$ref": "./sourceableField.json"
+        "$ref": "./field.json"
       }
     ]
   },
