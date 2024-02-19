@@ -102,15 +102,21 @@
     "required": ["properties"]
   },
   "NestedObjectProperty": {
+    "description": "Properties within an object type field.",
     "allOf": [
       {
         "$ref": "./field.json"
       },
       {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
         "type": "object",
         "properties": {
           "labelAliasFullyQualified": {
             "description": "A localized and fully qualified alias for the label of the nested property, e.g. 'Parent - Nested Property'",
+            "type": "string"
+          },
+          "property": {
+            "description": "The name of the property in the JSON object",
             "type": "string"
           }
         },
