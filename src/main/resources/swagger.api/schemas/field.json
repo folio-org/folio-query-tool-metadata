@@ -13,7 +13,7 @@
       "$ref": "entityDataType.json#/EntityDataType"
     },
     "labelAlias": {
-      "description": "The identifier used for a localized label/name for this column.",
+      "description": "A pre-localized identifier used to label/name this column.",
       "type": "string"
     },
     "source": {

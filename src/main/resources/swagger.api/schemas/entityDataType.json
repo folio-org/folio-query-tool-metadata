@@ -105,6 +105,16 @@
     "allOf": [
       {
         "$ref": "./field.json"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "labelAliasFullyQualified": {
+            "description": "A localized and fully qualified alias for the label of the nested property, e.g. 'Parent - Nested Property'",
+            "type": "string"
+          }
+        },
+        "required": []
       }
     ]
   },
