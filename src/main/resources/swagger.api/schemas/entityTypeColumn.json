@@ -13,10 +13,6 @@
           "description": "Indicates if the column should be shown by default when the entity is viewed.",
           "type": "boolean"
         },
-        "idColumnName": {
-          "description": "Name of the corresponding ID column, if this column contains the value of an ID.",
-          "type": "string"
-        },
         "isCustomField": {
           "description": "Indicates if the column belongs to the custom field.",
           "type": "boolean"
