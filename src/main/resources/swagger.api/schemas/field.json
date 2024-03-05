@@ -16,6 +16,10 @@
       "description": "A pre-localized identifier used to label/name this column.",
       "type": "string"
     },
+    "queryable": {
+      "description": "Indicates whether this column can be used in a query.",
+      "type": "boolean"
+    },
     "source": {
       "description": "Reference to the root entity type column, from where the values of this column are sourced.",
       "$ref": "sourceColumn.json"
