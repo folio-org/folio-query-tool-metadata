@@ -104,6 +104,10 @@
       "sortResults": {
         "description": "Whether to sort results based on entity type's sort criteria",
         "type": "boolean"
+      },
+      "maxSize": {
+        "description": "Maximum number of results to retrieve for the query",
+        "type": "integer"
       }
     },
     "required": [
