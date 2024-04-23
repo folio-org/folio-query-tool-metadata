@@ -70,6 +70,12 @@
       "sourceViewExtractor": {
         "description": "Getting the base source of the custom field",
         "type": "string"
+      },
+      "sources": {
+        "type": "array",
+        "items": {
+          "$ref": "entityTypeSource.json"
+        }
       }
     },
     "required": [
