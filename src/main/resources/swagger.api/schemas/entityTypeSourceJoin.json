@@ -19,7 +19,6 @@
   },
   "required": [
     "type",
-    "joinTo",
-    "condition"
+    "joinTo"
   ]
 }

@@ -20,6 +20,10 @@
         "isIdColumn": {
           "description": "Indicates if the column is part of the unique identifier for this entity type",
           "type": "boolean"
+        },
+        "sourceAlias": {
+          "description": "Source alias for this column",
+          "type": "string"
         }
       },
       "required": []
