@@ -50,10 +50,6 @@
       "items": {
         "$ref": "valueWithLabel.json"
       }
-    },
-    "sourceAlias": {
-      "description": "Source alias for this column",
-      "type": "string"
     }
   },
   "required": ["name", "dataType"]
