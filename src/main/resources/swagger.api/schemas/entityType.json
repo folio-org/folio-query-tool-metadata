@@ -77,6 +77,14 @@
         "items": {
           "$ref": "entityTypeSource.json"
         }
+      },
+      "requiredPermissions": {
+        "description": "List of permissions required to query this entity type",
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "default": []
       }
     },
     "required": [
