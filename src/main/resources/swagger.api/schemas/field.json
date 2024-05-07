@@ -20,6 +20,10 @@
       "description": "Indicates whether this column can be used in a query.",
       "type": "boolean"
     },
+    "queryOnly": {
+      "description": "Indicates whether this column can be used for querying only. If true, the column can be used in a query but cannot be included in results.",
+      "type": "boolean"
+    },
     "source": {
       "description": "Reference to the root entity type column, from where the values of this column are sourced.",
       "$ref": "sourceColumn.json"
