@@ -40,7 +40,8 @@
         "type": "array",
         "items": {
           "$ref": "entityTypeColumn.json"
-        }
+        },
+        "default": []
       },
       "defaultSort": {
         "type": "array",
