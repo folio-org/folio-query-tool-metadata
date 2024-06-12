@@ -301,6 +301,8 @@ components:
       $ref: schemas/entityDataType.json#/RangedUUIDType
     openUUIDType:
       $ref: schemas/entityDataType.json#/OpenUUIDType
+    stringUUIDType:
+      $ref: schemas/entityDataType.json#/StringUUIDType
     numberType:
       $ref: schemas/entityDataType.json#/NumberType
     integerType:
