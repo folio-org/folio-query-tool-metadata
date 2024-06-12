@@ -38,6 +38,14 @@
       }
     ]
   },
+  "StringUUIDType": {
+    "description": "Entity field type for UUID fields that are coming from the database as strings",
+    "allOf": [
+      {
+        "$ref": "entityDataType.json#/EntityDataType"
+      }
+    ]
+  },
   "NumberType": {
     "allOf": [
       {
