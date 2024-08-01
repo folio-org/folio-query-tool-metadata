@@ -24,9 +24,15 @@
         "sourceAlias": {
           "description": "Source alias for this column",
           "type": "string"
+        },
+        "hidden": {
+          "description": "Indicates if the field is hidden in UI",
+          "type": "boolean",
+          "default": false
         }
       },
       "required": []
     }
   ]
 }
+
