@@ -31,6 +31,10 @@
     "useIdColumns": {
       "description": "Whether to use the idColumns of this source as idColumns for the enclosing entity type",
       "type": "boolean"
+    },
+    "essentialOnly": {
+      "description": "Indicates that only critical columns for core functionality should be inherited, excluding non-essential columns",
+      "type": "boolean"
     }
   },
   "required": [
