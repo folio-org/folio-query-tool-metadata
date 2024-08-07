@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Entity Data Cross-Tenant Query Configuration",
+  "description": "Configuration for cross-tenant entity data queries",
+  "properties": {
+    "tenantIdColumn": {
+      "description": "The name of the column containing the tenant ID.",
+      "type": "string"
+    },
+    "sourceTenantIdColumn": {
+      "description": "The name of the source tenant ID of the entity.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "tenantIdColumn",
+    "sourceTenantIdColumn"
+  ]
+}
