@@ -43,9 +43,10 @@
         },
         "default": []
       },
-      "crossTenantQueryConfig": {
-        "description": "Cross-tenant query config for this entity type. Cross-tenant queries are not supported for entity types without this property.",
-        "$ref": "entityTypeCrossTenantQueryConfig.json"
+      "crossTenantQueriesEnabled": {
+        "description": "Indicates if this entity type supports cross-tenant queries",
+        "type": "boolean",
+        "default": false
       },
       "defaultSort": {
         "type": "array",

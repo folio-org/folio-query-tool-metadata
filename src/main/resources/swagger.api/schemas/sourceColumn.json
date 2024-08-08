@@ -5,7 +5,20 @@
   "type": "object",
   "properties": {
     "entityTypeId": {
-      "description": "A UUID identifying the source entity type",
+      "description": "A UUID identifying the source entity type.",
+      "type": "string"
+    },
+    "type": {
+      "description": "Name of the source type. Possible values: entity-type, fqm. Default: entity-type",
+      "type": "string",
+      "default": "entity-type",
+      "enum": [
+        "entity-type",
+        "fqm"
+      ]
+    },
+    "name": {
+      "description": "Name of the source within the source type (e.g., 'currency')",
       "type": "string"
     },
     "columnName": {
@@ -14,7 +27,6 @@
     }
   },
   "required": [
-    "entityTypeId",
-    "columnName"
+    "entityTypeId", "columnName"
   ]
 }
