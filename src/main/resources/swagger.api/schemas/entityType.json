@@ -91,6 +91,14 @@
           "type": "string"
         },
         "default": []
+      },
+      "additionalEcsConditions": {
+        "description": "Additional conditions to be included in the WHERE clause of this entity type in ECS environments",
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "default": []
       }
     },
     "required": [
