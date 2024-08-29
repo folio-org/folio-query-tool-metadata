@@ -40,7 +40,13 @@
         "type": "array",
         "items": {
           "$ref": "entityTypeColumn.json"
-        }
+        },
+        "default": []
+      },
+      "crossTenantQueriesEnabled": {
+        "description": "Indicates if this entity type supports cross-tenant queries",
+        "type": "boolean",
+        "default": false
       },
       "defaultSort": {
         "type": "array",
@@ -50,7 +56,8 @@
       },
       "fromClause": {
         "description": "FROM clause containing all src views that need to be joined to query this entity type",
-        "type": "string"
+        "type": "string",
+        "deprecated": true
       },
       "idView": {
         "description": "View from which the content IDs for this entity type are extracted",
@@ -70,13 +77,34 @@
       "sourceViewExtractor": {
         "description": "Getting the base source of the custom field",
         "type": "string"
+      },
+      "sources": {
+        "type": "array",
+        "items": {
+          "$ref": "entityTypeSource.json"
+        }
+      },
+      "requiredPermissions": {
+        "description": "List of permissions required to query this entity type",
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "default": []
+      },
+      "additionalEcsConditions": {
+        "description": "Additional conditions to be included in the WHERE clause of this entity type in ECS environments",
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "default": []
       }
     },
     "required": [
       "id",
       "name",
       "root",
-      "columns",
       "private"
     ]
   }

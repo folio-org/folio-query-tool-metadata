@@ -13,6 +13,7 @@ paths:
         - entity-types
       parameters:
         - $ref: '#/components/parameters/entityTypeId'
+        - $ref: '#/components/parameters/include-hidden'
       responses:
         '200':
           description: 'Definition of the requested entity type'
@@ -287,6 +288,14 @@ components:
           type: string
       required: false
       description: ID of the last element from the previous query
+    include-hidden:
+      name: includeHidden
+      in: query
+      required: false
+      description: Include the hidden column in the display
+      schema:
+        type: boolean
+        default: false
 
   schemas:
     UUID:
@@ -301,6 +310,8 @@ components:
       $ref: schemas/entityDataType.json#/RangedUUIDType
     openUUIDType:
       $ref: schemas/entityDataType.json#/OpenUUIDType
+    stringUUIDType:
+      $ref: schemas/entityDataType.json#/StringUUIDType
     numberType:
       $ref: schemas/entityDataType.json#/NumberType
     integerType:

@@ -20,9 +20,23 @@
         "isIdColumn": {
           "description": "Indicates if the column is part of the unique identifier for this entity type",
           "type": "boolean"
+        },
+        "sourceAlias": {
+          "description": "Source alias for this column",
+          "type": "string"
+        },
+        "hidden": {
+          "description": "Indicates if the field is hidden in UI",
+          "type": "boolean",
+          "default": false
+        },
+        "essential": {
+          "description": "Indicates if a column is crucial to the definition of an entity type",
+          "type": "boolean"
         }
       },
       "required": []
     }
   ]
 }
+

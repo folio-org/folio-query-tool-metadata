@@ -16,6 +16,14 @@
       "description": "A pre-localized identifier used to label/name this column.",
       "type": "string"
     },
+    "queryable": {
+      "description": "Indicates whether this column can be used in a query.",
+      "type": "boolean"
+    },
+    "queryOnly": {
+      "description": "Indicates whether this column can be used for querying only. If true, the column can be used in a query but cannot be included in results.",
+      "type": "boolean"
+    },
     "source": {
       "description": "Reference to the root entity type column, from where the values of this column are sourced.",
       "$ref": "sourceColumn.json"
@@ -46,6 +54,10 @@
       "items": {
         "$ref": "valueWithLabel.json"
       }
+    },
+    "ecsOnly": {
+      "description": "Indicates if the field is available only in ECS environments",
+      "type": "boolean"
     }
   },
   "required": ["name", "dataType"]

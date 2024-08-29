@@ -9,13 +9,25 @@
       "type": "string",
       "format": "uuid"
     },
+    "type": {
+      "description": "Name of the source type. Possible values: entity-type, fqm. Default: entity-type",
+      "type": "string",
+      "default": "entity-type",
+      "enum": [
+        "entity-type",
+        "fqm"
+      ]
+    },
+    "name": {
+      "description": "Name of the source within the source type (e.g., 'currency')",
+      "type": "string"
+    },
     "columnName": {
       "description": "Name of the source column",
       "type": "string"
     }
   },
   "required": [
-    "entityTypeId",
-    "columnName"
+    "entityTypeId", "columnName"
   ]
 }
