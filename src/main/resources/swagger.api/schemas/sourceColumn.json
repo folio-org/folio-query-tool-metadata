@@ -5,8 +5,9 @@
   "type": "object",
   "properties": {
     "entityTypeId": {
-      "description": "A UUID identifying the source entity type.",
-      "type": "string"
+      "description": "A UUID identifying the source entity type",
+      "type": "string",
+      "format": "uuid"
     },
     "type": {
       "description": "Name of the source type. Possible values: entity-type, fqm. Default: entity-type",
