@@ -6,7 +6,8 @@
   "properties": {
     "entityTypeId": {
       "description": "A UUID identifying the source entity type",
-      "type": "string"
+      "type": "string",
+      "format": "uuid"
     },
     "columnName": {
       "description": "Name of the source column",
