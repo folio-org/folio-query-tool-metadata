@@ -56,6 +56,11 @@
         "description": "Date and time when the query execution was completed",
         "type": "string",
         "format": "date-time"
+      },
+      "crossTenant": {
+        "description": "Indicates whether a query is cross-tenant",
+        "type": "boolean",
+        "default": false
       }
     },
     "required": [
