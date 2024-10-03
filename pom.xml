@@ -197,7 +197,15 @@
               <generateApiTests>true</generateApiTests>
               <generateApiDocumentation>true</generateApiDocumentation>
               <generateModels>true</generateModels>
-              <modelsToGenerate>entityDataType,arrayType,dateType,entityTypeRelation,objectType,nestedObjectProperty,entityTypeColumn,enumType,booleanType,entityType,integerType,openUUIDType,stringType,numberType,rangedUUIDType,valueWithLabel,entityTypeDefaultSort,errors,error,parameters,parameter,resultsetPage,queryDetails,queryIdentifier,sourceColumn,valueSourceApi,columnValues,columnValueGetter,submitQuery,contentsRequest,field,entityTypeSource,entityTypeSourceJoin,stringUUIDType</modelsToGenerate>
+              <modelsToGenerate>
+                <!-- the commas at the start and end of each line are load-bearing, as otherwise openapi-generator will include the newline/indentation as part of the model name -->
+                ,errors,error,parameters,parameter,resultsetPage,
+                ,entityType,field,entityTypeColumn,entityTypeRelation,entityTypeDefaultSort,sourceColumn,entityTypeSource,entityTypeSourceJoin,
+                ,entityDataType,arrayType,dateType,objectType,enumType,booleanType,integerType,openUUIDType,stringType,numberType,rangedUUIDType,stringUUIDType,
+                ,nestedObjectProperty,valueWithLabel,valueSourceApi,columnValues,columnValueGetter,
+                ,queryDetails,queryIdentifier,
+                ,submitQuery,contentsRequest,fqmMigrateRequest,fqmMigrateResponse,fqmMigrateWarning
+              </modelsToGenerate>
               <generateModelTests>false</generateModelTests>
               <generateModelDocumentation>true</generateModelDocumentation>
               <generateSupportingFiles>true</generateSupportingFiles>
