@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Entity Upgrade Response",
+  "description": "Schema for a migrated query, with associated entity type, fields, and potential warnings",
+  "type": "object",
+  "properties": {
+    "entityTypeId": {
+      "description": "ID of the post-upgrade entity type",
+      "type": "string",
+      "format": "uuid"
+    },
+    "fqlQuery": {
+      "description": "Post-upgrade FQL query string",
+      "type": "string"
+    },
+    "fields": {
+      "description": "Post-upgrade list of fields",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "description": "List of warnings issued during the upgrade",
+      "type": "array",
+      "items": {
+        "$ref": "./fqmMigrateWarning.json"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": ["entityTypeId"]
+}

@@ -352,6 +352,12 @@ components:
       $ref: schemas/query.json#/SubmitQuery
     contentsRequest:
       $ref: schemas/query.json#/ContentsRequest
+
+    fqmMigrateRequest:
+      $ref: schemas/fqmMigrateRequest.json
+    fqmMigrateResponse:
+      $ref: schemas/fqmMigrateResponse.json
+
     queryResultIds:
       type: array
       items:
@@ -375,7 +381,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/errors"
+            $ref: '#/components/schemas/errors'
     internalServerErrorResponse:
       description: When unhandled exception occurred during code execution, e.g. NullPointerException
       content:
@@ -386,5 +392,4 @@ components:
                 code: unexpected.error
             total_records: 1
           schema:
-            $ref: "#/components/schemas/errors"
-
+            $ref: '#/components/schemas/errors'
