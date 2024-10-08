@@ -15,6 +15,13 @@
     "labelJsonPath": {
       "description": "JsonPath defining how to access the labels for the values provided by the API",
       "type": "string"
+    },
+    "queryParams": {
+      "description": "Map of query parameters to be passed to API endpoint",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
     }
   },
   "required": [
