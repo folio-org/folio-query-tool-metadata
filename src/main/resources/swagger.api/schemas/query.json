@@ -144,6 +144,11 @@
             "type": "string"
           }
         }
+      },
+      "localize": {
+        "description": "Whether to localize dates in content response",
+        "type": "boolean",
+        "default": false
       }
     },
     "required": [
