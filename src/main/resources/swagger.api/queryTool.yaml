@@ -158,6 +158,8 @@ paths:
     get:
       operationId: getSortedIds
       description: Get ids of query results in sorted order
+      deprecated: true
+      summary: This endpoint is deprecated and will be removed in a future release
       tags:
         - fqlQuery
       parameters:
