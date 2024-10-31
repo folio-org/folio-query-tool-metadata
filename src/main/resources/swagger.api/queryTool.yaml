@@ -201,6 +201,30 @@ paths:
           $ref: '#/components/responses/badRequestResponse'
         '500':
           $ref: '#/components/responses/internalServerErrorResponse'
+  /query/contents/privileged:
+    post:
+      tags:
+        - fqlQuery
+      operationId: getContentsPrivileged
+      description: get contents for list of ids using a specified user proxy
+      requestBody:
+        description: Contents request
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/contentsRequest'
+      responses:
+        '200':
+          description: A page of list contents
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/contents'
+        '400':
+          $ref: '#/components/responses/badRequestResponse'
+        '500':
+          $ref: '#/components/responses/internalServerErrorResponse'
 components:
   parameters:
     entityTypeId:
