@@ -149,6 +149,9 @@
         "description": "Whether to localize dates in content response",
         "type": "boolean",
         "default": false
+      },
+      "userId": {
+        "$ref": "common.json#/UUID"
       }
     },
     "required": [
