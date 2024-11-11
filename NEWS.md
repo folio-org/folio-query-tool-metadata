@@ -1,3 +1,6 @@
+## 3.0.1
+- Bump to spring-boot-starter-parent v3.3.5 ([FQTM-10](https://folio-org.atlassian.net/browse/FQTM-10))
+
 ## 3.0.0
   - Implement object model to support composite entity types [MODFQMMGR-229](https://folio-org.atlassian.net/browse/MODFQMMGR-229)
   - Add support for entity-type-level permissions [MODFQMMGR-268](https://folio-org.atlassian.net/browse/MODFQMMGR-268)
