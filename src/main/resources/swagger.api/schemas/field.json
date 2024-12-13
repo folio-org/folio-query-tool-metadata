@@ -58,6 +58,11 @@
     "ecsOnly": {
       "description": "Indicates if the field is available only in ECS environments",
       "type": "boolean"
+    },
+    "isJsonbArray": {
+      "description": "Indicates whether to treat the array field as a JSONB array or a Postgres array for query generation and processing. Defaults to false",
+      "type": "boolean",
+      "default": false
     }
   },
   "required": ["name", "dataType"]
