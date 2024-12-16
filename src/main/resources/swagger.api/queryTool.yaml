@@ -356,6 +356,8 @@ components:
       $ref: schemas/entityDataType.json#/NestedObjectProperty
     arrayType:
       $ref: schemas/entityDataType.json#/ArrayType
+    jsonbArrayType:
+      $ref: schemas/entityDataType.json#/JsonbArrayType
     entityTypeDefaultSort:
       $ref: schemas/entityTypeDefaultSort.json
     errors:

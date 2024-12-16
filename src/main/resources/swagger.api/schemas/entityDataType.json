@@ -152,5 +152,16 @@
         "$ref": "#/ArrayTypeContainer"
       }
     ]
+  },
+  "JsonbArrayType": {
+    "description": "Entity field type defined in https://issues.folio.org/browse/UIPQB-6",
+    "allOf": [
+      {
+        "$ref": "entityDataType.json#/EntityDataType"
+      },
+      {
+        "$ref": "#/ArrayTypeContainer"
+      }
+    ]
   }
 }
