@@ -1,3 +1,6 @@
+## 3.0.2
+- Add new jsonbArrayType field type; this should be handled identically to arrayType by FQM consumers ([MODFQMMGR-548](https://folio-org.atlassian.net/browse/MODFQMMGR-548))
+
 ## 3.0.1
 - Bump to spring-boot-starter-parent v3.3.5 ([FQTM-10](https://folio-org.atlassian.net/browse/FQTM-10))
 
