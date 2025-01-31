@@ -2,43 +2,31 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Entity Type Source",
   "description": "Definition for an entity type source, which provide a set of fields and can be joined with other sources",
-  "type": "object",
-  "properties": {
-    "type": {
-      "description": "Type of source. Valid values are db, entity-type.",
-      "type": "string"
-    },
-    "target": {
-      "description": "Target from which values are extracted",
-      "type": "string"
-    },
-    "alias": {
-      "description": "Alias of this source to be used in query",
-      "type": "string"
-    },
-    "id": {
-      "description": "Id of the entity type for this source (entity-type type only)",
-      "type": "string"
-    },
-    "join": {
-      "description": "Object describing how this entity type source can be joined to another source",
-      "$ref": "entityTypeSourceJoin.json"
-    },
-    "flattened": {
-      "description": "Whether this source has already been flattened",
-      "type": "boolean"
-    },
-    "useIdColumns": {
-      "description": "Whether to use the idColumns of this source as idColumns for the enclosing entity type",
-      "type": "boolean"
-    },
-    "essentialOnly": {
-      "description": "Indicates that only critical columns for core functionality should be inherited, excluding non-essential columns",
-      "type": "boolean"
+  "allOf": [
+    {
+      "type": "object",
+      "discriminator": {
+        "propertyName": "type",
+        "mapping": {
+          "db": "#/components/schemas/entityTypeSourceDatabase",
+          "entity-type": "#/components/schemas/entityTypeSourceEntityType"
+        }
+      },
+      "properties": {
+        "type": {
+          "description": "Type of source. Valid values are db, entity-type",
+          "type": "string"
+        },
+        "alias": {
+          "description": "Alias of this source to be used in query/later joins",
+          "type": "string"
+        },
+        "joinedViaEntityType": {
+          "description": "[Internal use only, should not be included in definitions] The owning entity's alias, if this source's joining is handled by a parent entity in a cross-entity join",
+          "type": "string"
+        }
+      },
+      "required": ["type", "alias"]
     }
-  },
-  "required": [
-    "type",
-    "alias"
   ]
 }

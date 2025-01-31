@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Entity Type Database Source",
+  "description": "Definition for an entity type source based on a database",
+  "allOf": [
+    {
+      "$ref": "./entityTypeSource.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "target": {
+          "description": "Target view/table from which values are extracted",
+          "type": "string"
+        },
+        "join": {
+          "$ref": "./entityTypeSourceDatabaseJoin.json"
+        }
+      }
+    }
+  ]
+}

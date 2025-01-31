@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Definition of a possible field join",
+  "description": "A listing of a way for a field to join to another",
+  "allOf": [
+    {
+      "type": "object",
+      "discriminator": {
+        "propertyName": "type",
+        "mapping": {
+          "custom": "#/components/schemas/joinCustom",
+          "equality-simple": "#/components/schemas/joinEqualitySimple",
+          "equality-cast-uuid": "#/components/schemas/joinEqualityCastUUID"
+        }
+      },
+      "properties": {
+        "targetId": {
+          "description": "The ID of the target entity type",
+          "type": "string",
+          "format": "uuid"
+        },
+        "targetField": {
+          "description": "The field on the target entity type",
+          "type": "string"
+        },
+        "type": {
+          "description": "Type of join expression (e.g. custom, equality-simple, equality-cast-uuid)",
+          "type": "string"
+        },
+        "direction": {
+          "description": "Direction of the join, from the perspective of :this JOIN :target (e.g. inner, left, right)",
+          "type": "string",
+          "enum": ["inner", "left", "right", "full"],
+          "default": "inner"
+        }
+      },
+      "required": ["targetId", "targetField", "type"]
+    }
+  ]
+}
