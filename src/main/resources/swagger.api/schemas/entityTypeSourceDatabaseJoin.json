@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Entity Type Source Join",
-  "description": "Definition indicating how an entity type source can be joined",
+  "title": "Entity Type DB Source Join",
+  "description": "[Deprecated for use in definitions; you should likely create simple wrapper entity types and join those] Object describing how this DB view/table should be joined to another",
   "type": "object",
   "properties": {
     "type": {
@@ -17,8 +17,5 @@
       "type": "string"
     }
   },
-  "required": [
-    "type",
-    "joinTo"
-  ]
+  "required": ["type", "joinTo"]
 }

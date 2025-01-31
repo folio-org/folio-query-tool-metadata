@@ -326,6 +326,14 @@ components:
   schemas:
     UUID:
       $ref: schemas/common.json#/UUID
+
+    entityTypeSource:
+      $ref: schemas/entityTypeSource.json
+    entityTypeSourceDatabase:
+      $ref: schemas/entityTypeSourceDatabase.json
+    entityTypeSourceEntityType:
+      $ref: schemas/entityTypeSourceEntityType.json
+
     entityType:
       $ref: schemas/entityType.json#/EntityType
     entityDataType:
@@ -385,6 +393,15 @@ components:
       $ref: schemas/fqmMigrateRequest.json
     fqmMigrateResponse:
       $ref: schemas/fqmMigrateResponse.json
+
+    join:
+      $ref: schemas/field-joins/join.json
+    joinCustom:
+      $ref: schemas/field-joins/joinCustom.json
+    joinEqualitySimple:
+      $ref: schemas/field-joins/joinEqualitySimple.json
+    joinEqualityCastUUID:
+      $ref: schemas/field-joins/joinEqualityCastUUID.json
 
     queryResultIds:
       type: array

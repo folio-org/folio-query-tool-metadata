@@ -81,7 +81,7 @@
       "sources": {
         "type": "array",
         "items": {
-          "$ref": "entityTypeSource.json"
+          "$ref": "./entityTypeSource.json"
         },
         "default": []
       },
@@ -102,12 +102,6 @@
         "default": []
       }
     },
-    "required": [
-      "id",
-      "name",
-      "root",
-      "private"
-    ]
+    "required": ["id", "name", "root", "private"]
   }
 }
-
