@@ -21,7 +21,7 @@
     <openapi-generator.version>7.11.0</openapi-generator.version>
     <maven-compat.version>3.8.7</maven-compat.version>
     <yaml.file>${project.basedir}/src/main/resources/swagger.api/queryTool.yaml</yaml.file>
-    <lombok.version>1.18.24</lombok.version>
+    <lombok.version>1.18.36</lombok.version>
     <jackson-databind-nullable.version>0.2.4</jackson-databind-nullable.version>
     <snakeyaml.version>2.0</snakeyaml.version>
     <!-- -->
