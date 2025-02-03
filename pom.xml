@@ -218,7 +218,11 @@
                 <interfaceOnly>true</interfaceOnly>
                 <useSpringBoot3>true</useSpringBoot3>
                 <useTags>true</useTags>
-                <additionalModelTypeAnnotations>@lombok.experimental.SuperBuilder(toBuilder = true)</additionalModelTypeAnnotations>
+                <additionalModelTypeAnnotations>
+                  <!-- lombok's builder will generate a copy constructor that can shadow implicit no-args, so we make an explicit one -->
+                  @lombok.NoArgsConstructor
+                  @lombok.experimental.SuperBuilder(toBuilder = true)
+                </additionalModelTypeAnnotations>
               </configOptions>
               <openapiNormalizer>REF_AS_PARENT_IN_ALLOF=true</openapiNormalizer>
             </configuration>
