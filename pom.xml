@@ -58,13 +58,13 @@
           <artifactId>spring-boot-starter-logging</artifactId>
         </exclusion>
       </exclusions>
-      <!-- Making this dependency optional to avoid lib-frm-query-processor having transitive dependency on spring -->
+      <!-- Making this dependency optional to avoid lib-fqm-query-processor having transitive dependency on spring -->
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <optional>true</optional>
+      <scope>provided</scope>
     </dependency>
     <!-- OAS generation -->
     <dependency>
@@ -218,6 +218,7 @@
                 <interfaceOnly>true</interfaceOnly>
                 <useSpringBoot3>true</useSpringBoot3>
                 <useTags>true</useTags>
+                <additionalModelTypeAnnotations>@lombok.experimental.SuperBuilder(toBuilder = true)</additionalModelTypeAnnotations>
               </configOptions>
               <openapiNormalizer>REF_AS_PARENT_IN_ALLOF=true</openapiNormalizer>
             </configuration>
