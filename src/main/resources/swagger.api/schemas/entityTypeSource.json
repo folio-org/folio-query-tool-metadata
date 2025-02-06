@@ -24,6 +24,11 @@
         "joinedViaEntityType": {
           "description": "[Internal use only, should not be included in definitions] The owning entity's alias, if this source's joining is handled by a parent entity in a cross-entity join",
           "type": "string"
+        },
+        "order": {
+          "description": "Order of the inherited fields from this source, relative to the fields from other sources. Defaults to 1073741823 (INT_MAX/2)",
+          "type": "integer",
+          "default": 1073741823
         }
       },
       "required": ["type", "alias"]
