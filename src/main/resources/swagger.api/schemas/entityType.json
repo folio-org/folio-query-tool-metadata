@@ -25,13 +25,6 @@
         "description": "This flag denotes whether the entity type is private or not. Private entity types cannot be accessed by users for querying.",
         "type": "boolean"
       },
-      "subEntityTypeIds": {
-        "description": "The IDs of the entity types that encompass a subset of the columns in this particular entity type.",
-        "type": "array",
-        "items": {
-          "$ref": "common.json#/UUID"
-        }
-      },
       "customFieldEntityTypeId": {
         "description": "The IDs of the custom field entity type ",
         "type": "string"
