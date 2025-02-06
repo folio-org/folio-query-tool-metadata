@@ -35,6 +35,11 @@
     "essentialOnly": {
       "description": "Indicates that only critical columns for core functionality should be inherited, excluding non-essential columns",
       "type": "boolean"
+    },
+    "order": {
+      "description": "Order of the inherited fields from this source, relative to the fields from other sources. Defaults to 1073741823 (INT_MAX/2)",
+      "type": "integer",
+      "default": 1073741823
     }
   },
   "required": [
