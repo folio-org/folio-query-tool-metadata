@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Entity Type — Entity Type Source",
+  "description": "Definition for an entity type source referring to another entity type",
+  "allOf": [
+    {
+      "$ref": "./entityTypeSource.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "sourceField": {
+          "description": "If joining, fully qualified field of the source entity type that targetId/targetField will join to",
+          "type": "string"
+        },
+        "targetId": {
+          "description": "ID of the entity type newly included with this source",
+          "type": "string",
+          "format": "uuid"
+        },
+        "targetField": {
+          "description": "If joining, field of the new entity type that will be joined to the source entity type",
+          "type": "string"
+        },
+        "overrideJoinDirection": {
+          "$ref": "./field-joins/joinDirection.json"
+        },
+        "useIdColumns": {
+          "description": "Whether to use the idColumns of this source as idColumns for the enclosing entity type",
+          "type": "boolean"
+        },
+        "essentialOnly": {
+          "description": "Indicates that only critical columns for core functionality should be inherited, excluding non-essential columns",
+          "type": "boolean"
+        }
+      },
+      "required": ["targetId"]
+    }
+  ]
+}

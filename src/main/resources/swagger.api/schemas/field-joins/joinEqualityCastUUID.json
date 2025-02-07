@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Casted UUID equality join",
+  "description": "[:this::uuid = :that::uuid] A join that connects one field to another using a simple = with explicit UUID casts",
+  "allOf": [
+    {
+      "$ref": "./join.json"
+    }
+  ]
+}

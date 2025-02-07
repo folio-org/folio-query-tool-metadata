@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Simple equality join",
+  "description": "[:this = :that] A join that connects one field to another using a simple = expression",
+  "allOf": [
+    {
+      "$ref": "./join.json"
+    }
+  ]
+}
