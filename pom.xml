@@ -202,7 +202,7 @@
                 ,errors,error,parameters,parameter,resultsetPage,
                 ,entityType,field,entityTypeColumn,entityTypeRelation,entityTypeDefaultSort,sourceColumn,
                 ,entityTypeSource,entityTypeSourceBase,entityTypeSourceDatabase,entityTypeSourceDatabaseJoin,entityTypeSourceEntityType,
-                ,join,joinCustom,joinEqualitySimple,joinEqualityCastUUID,
+                ,join,joinDirection,joinCustom,joinEqualitySimple,joinEqualityCastUUID,
                 ,entityDataType,arrayType,jsonbArrayType,dateType,objectType,enumType,booleanType,integerType,openUUIDType,stringType,numberType,rangedUUIDType,stringUUIDType,
                 ,nestedObjectProperty,valueWithLabel,valueSourceApi,columnValues,columnValueGetter
                 ,queryDetails,queryIdentifier,

@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Direction of the join, from the perspective of :this JOIN :target (e.g. inner, left, right)",
+  "type": "string",
+  "enum": ["inner", "left", "right", "full"],
+  "default": "inner"
+}

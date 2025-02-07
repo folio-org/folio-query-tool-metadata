@@ -22,6 +22,9 @@
           "description": "If joining, field of the new entity type that will be joined to the source entity type",
           "type": "string"
         },
+        "overrideJoinDirection": {
+          "$ref": "./field-joins/joinDirection.json"
+        },
         "useIdColumns": {
           "description": "Whether to use the idColumns of this source as idColumns for the enclosing entity type",
           "type": "boolean"

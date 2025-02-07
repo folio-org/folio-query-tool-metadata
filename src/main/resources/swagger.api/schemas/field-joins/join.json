@@ -27,12 +27,7 @@
           "description": "Type of join expression (e.g. custom, equality-simple, equality-cast-uuid)",
           "type": "string"
         },
-        "direction": {
-          "description": "Direction of the join, from the perspective of :this JOIN :target (e.g. inner, left, right)",
-          "type": "string",
-          "enum": ["inner", "left", "right", "full"],
-          "default": "inner"
-        }
+        "direction": { "$ref": "./joinDirection.json" }
       },
       "required": ["targetId", "targetField", "type"]
     }
