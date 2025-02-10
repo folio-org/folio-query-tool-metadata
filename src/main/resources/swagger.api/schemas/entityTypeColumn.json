@@ -39,7 +39,8 @@
           "type": "array",
           "items": {
             "$ref": "./field-joins/join.json"
-          }
+          },
+          "default": []
         },
         "originalEntityTypeId": {
           "description": "[Internal only, not for definitions] The simplest entity type that this column is derived from",

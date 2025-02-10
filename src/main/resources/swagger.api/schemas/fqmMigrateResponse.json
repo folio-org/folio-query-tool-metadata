@@ -18,14 +18,16 @@
       "type": "array",
       "items": {
         "type": "string"
-      }
+      },
+      "default": []
     },
     "warnings": {
       "description": "List of warnings issued during the upgrade",
       "type": "array",
       "items": {
         "$ref": "./fqmMigrateWarning.json"
-      }
+      },
+      "default": []
     }
   },
   "additionalProperties": false,

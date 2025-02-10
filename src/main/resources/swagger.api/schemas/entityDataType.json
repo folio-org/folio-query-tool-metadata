@@ -104,7 +104,8 @@
         "type": "array",
         "items": {
           "$ref": "entityDataType.json#/NestedObjectProperty"
-        }
+        },
+        "default": []
       }
     },
     "required": ["properties"]
