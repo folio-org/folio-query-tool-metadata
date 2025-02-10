@@ -223,6 +223,7 @@
                   @lombok.NoArgsConstructor
                   @lombok.experimental.SuperBuilder(toBuilder = true)
                 </additionalModelTypeAnnotations>
+                <containerDefaultToNull>true</containerDefaultToNull>
               </configOptions>
               <openapiNormalizer>REF_AS_PARENT_IN_ALLOF=true</openapiNormalizer>
             </configuration>
