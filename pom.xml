@@ -18,10 +18,10 @@
 
   <properties>
     <java.version>17</java.version>
-    <openapi-generator.version>7.3.0</openapi-generator.version>
+    <openapi-generator.version>7.11.0</openapi-generator.version>
     <maven-compat.version>3.8.7</maven-compat.version>
     <yaml.file>${project.basedir}/src/main/resources/swagger.api/queryTool.yaml</yaml.file>
-    <lombok.version>1.18.24</lombok.version>
+    <lombok.version>1.18.36</lombok.version>
     <jackson-databind-nullable.version>0.2.4</jackson-databind-nullable.version>
     <snakeyaml.version>2.0</snakeyaml.version>
     <!-- -->
@@ -58,13 +58,13 @@
           <artifactId>spring-boot-starter-logging</artifactId>
         </exclusion>
       </exclusions>
-      <!-- Making this dependency optional to avoid lib-frm-query-processor having transitive dependency on spring -->
+      <!-- Making this dependency optional to avoid lib-fqm-query-processor having transitive dependency on spring -->
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <optional>true</optional>
+      <scope>provided</scope>
     </dependency>
     <!-- OAS generation -->
     <dependency>
@@ -200,7 +200,9 @@
               <modelsToGenerate>
                 <!-- the commas at the start and end of each line are load-bearing, as otherwise openapi-generator will include the newline/indentation as part of the model name -->
                 ,errors,error,parameters,parameter,resultsetPage,
-                ,entityType,field,entityTypeColumn,entityTypeRelation,entityTypeDefaultSort,sourceColumn,entityTypeSource,entityTypeSourceJoin,
+                ,entityType,field,entityTypeColumn,entityTypeRelation,entityTypeDefaultSort,sourceColumn,
+                ,entityTypeSource,entityTypeSourceBase,entityTypeSourceDatabase,entityTypeSourceDatabaseJoin,entityTypeSourceEntityType,
+                ,join,joinDirection,joinCustom,joinEqualitySimple,joinEqualityCastUUID,
                 ,entityDataType,arrayType,jsonbArrayType,dateType,objectType,enumType,booleanType,integerType,openUUIDType,stringType,numberType,rangedUUIDType,stringUUIDType,
                 ,nestedObjectProperty,valueWithLabel,valueSourceApi,columnValues,columnValueGetter
                 ,queryDetails,queryIdentifier,
@@ -216,6 +218,12 @@
                 <interfaceOnly>true</interfaceOnly>
                 <useSpringBoot3>true</useSpringBoot3>
                 <useTags>true</useTags>
+                <additionalModelTypeAnnotations>
+                  <!-- lombok's builder will generate a copy constructor that can shadow implicit no-args, so we make an explicit one -->
+                  @lombok.NoArgsConstructor
+                  @lombok.experimental.SuperBuilder(toBuilder = true)
+                </additionalModelTypeAnnotations>
+                <containerDefaultToNull>true</containerDefaultToNull>
               </configOptions>
               <openapiNormalizer>REF_AS_PARENT_IN_ALLOF=true</openapiNormalizer>
             </configuration>

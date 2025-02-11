@@ -33,10 +33,22 @@
         "essential": {
           "description": "Indicates if a column is crucial to the definition of an entity type",
           "type": "boolean"
+        },
+        "joinsTo": {
+          "description": "A set of columns which this column may be joined to",
+          "type": "array",
+          "items": {
+            "$ref": "./field-joins/join.json"
+          },
+          "default": []
+        },
+        "originalEntityTypeId": {
+          "description": "[Internal only, not for definitions] The simplest entity type that this column is derived from",
+          "type": "string",
+          "format": "uuid"
         }
       },
       "required": []
     }
   ]
 }
-

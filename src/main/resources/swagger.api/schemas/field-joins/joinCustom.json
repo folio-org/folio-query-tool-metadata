@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Custom SQL join",
+  "description": "A join that connects one field to another using a custom SQL expression. Primarily for development purposes; a custom join should likely be created instead if this is used the same way in multiple locations (deprecation warning is to encourage this by developers)",
+  "deprecated": true,
+  "allOf": [
+    {
+      "$ref": "./join.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "sql": {
+          "description": "Raw SQL to join the columns (use :this and :that to refer to this and target columns, respectively)",
+          "type": "string"
+        }
+      },
+      "required": ["sql"]
+    }
+  ]
+}
