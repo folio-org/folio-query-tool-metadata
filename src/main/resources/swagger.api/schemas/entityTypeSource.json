@@ -35,6 +35,10 @@
     "essentialOnly": {
       "description": "Indicates that only critical columns for core functionality should be inherited, excluding non-essential columns",
       "type": "boolean"
+    },
+    "customFieldEntity": {
+      "description": "Value of custom field entity like 'po_line', 'purchase_order', values gathered from custom field object",
+      "type": "string"
     }
   },
   "required": [
