@@ -1,3 +1,8 @@
+## 3.1.0
+- Add order property to ET sources ([MODFQMMGR-543](https://folio-org.atlassian.net/browse/MODFQMMGR-543))
+- New entity type join model ([FQTM-11](https://folio-org.atlassian.net/browse/FQTM-11))
+- Update Java to v21 ([FOLIO-4235](https://folio-org.atlassian.net/browse/FOLIO-4235))
+
 ## 3.0.2
 - Add new jsonbArrayType field type; this should be handled identically to arrayType by FQM consumers ([MODFQMMGR-548](https://folio-org.atlassian.net/browse/MODFQMMGR-548))
 
