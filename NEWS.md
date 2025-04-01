@@ -1,3 +1,6 @@
+## 3.1.1
+- Add MAX_SIZE_EXCEEDED query status ([MODFQMMGR-723](https://folio-org.atlassian.net/browse/MODFQMMGR-723))
+
 ## 3.1.0
 - Add order property to ET sources ([MODFQMMGR-543](https://folio-org.atlassian.net/browse/MODFQMMGR-543))
 - New entity type join model ([FQTM-11](https://folio-org.atlassian.net/browse/FQTM-11))
