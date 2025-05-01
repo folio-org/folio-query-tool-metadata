@@ -21,6 +21,10 @@
           "description": "Alias of this source to be used in query/later joins",
           "type": "string"
         },
+        "name": {
+          "description": "Name of this source. If set, this will override any source name translations",
+          "type": "string"
+        },
         "joinedViaEntityType": {
           "description": "[Internal use only, should not be included in definitions] The owning entity's alias, if this source's joining is handled by a parent entity in a cross-entity join",
           "type": "string"

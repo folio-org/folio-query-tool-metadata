@@ -13,6 +13,10 @@
         "description": "The unique name of entity type like User, Loan, Item, etc.",
         "type": "string"
       },
+      "description": {
+        "description": "A description of the entity type",
+        "type": "string"
+      },
       "labelAlias": {
         "description": "The identifier used for a localized label/name for this entity.",
         "type": "string"
@@ -95,6 +99,12 @@
         "default": []
       }
     },
-    "required": ["id", "name", "root", "private"]
+    "required": [
+      "id",
+      "name",
+      "root",
+      "private"
+    ],
+    "additionalProperties": true
   }
 }

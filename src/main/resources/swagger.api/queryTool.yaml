@@ -336,6 +336,8 @@ components:
 
     entityType:
       $ref: schemas/entityType.json#/EntityType
+    customEntityType:
+      $ref: schemas/customEntityType.json
     entityDataType:
       $ref: schemas/entityDataType.json#/EntityDataType
     stringType:

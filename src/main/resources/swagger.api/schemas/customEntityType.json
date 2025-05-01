@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Custom Entity Type Schema",
+  "description": "A definition of a custom entity types that can be used in the Query Tool",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "entityType.json#/EntityType"
+    },
+    {
+      "properties": {
+        "creator": {
+          "description": "A UUID identifying entity type creator",
+          "type": "string"
+        },
+        "shared": {
+          "description": "Denotes if the entity type is shared (true) or private (false)",
+          "type": "boolean",
+          "default": false
+        },
+        "createdAt": {
+          "description": "The creation timestamp of the entity type",
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "description": "The update timestamp of the entity type",
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "creator",
+        "shared"
+      ]
+    }
+  ]
+}
