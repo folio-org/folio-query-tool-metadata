@@ -58,6 +58,96 @@ paths:
         '500':
           $ref: '#/components/responses/internalServerErrorResponse'
 
+  /entity-types/custom:
+    post:
+      operationId: createCustomEntityType
+      tags:
+        - entity-types
+        - custom
+      description: Create a custom entity type
+      requestBody:
+        description: Custom entity type definition
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/customEntityType'
+      responses:
+        '201':
+          description: 'Created successfully'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/customEntityType'
+          headers:
+            Location:
+              schema:
+                type: string
+                format: url
+              description: The URL of the newly created custom entity type
+              example: /entity-types/custom/6087a09b-8b34-4e6c-8173-c0c5f0f45e7a
+        '400':
+          $ref: '#/components/responses/badRequestResponse'
+        '500':
+          $ref: '#/components/responses/internalServerErrorResponse'
+  /entity-types/custom/{entityTypeId}:
+    get:
+      operationId: getCustomEntityType
+      tags:
+        - entity-types
+        - custom
+      parameters:
+        - $ref: '#/components/parameters/entityTypeId'
+      responses:
+        '200':
+          description: 'Definition of the requested custom entity type'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/customEntityType'
+        '400':
+          $ref: '#/components/responses/badRequestResponse'
+        '500':
+          $ref: '#/components/responses/internalServerErrorResponse'
+
+    put:
+      operationId: updateCustomEntityType
+      tags:
+        - entity-types
+        - custom
+      parameters:
+        - $ref: '#/components/parameters/entityTypeId'
+      requestBody:
+        description: Custom entity type definition
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/customEntityType'
+      responses:
+        '200':
+          description: 'Definition of the requested custom entity type'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/customEntityType'
+        '400':
+          $ref: '#/components/responses/badRequestResponse'
+        '500':
+          $ref: '#/components/responses/internalServerErrorResponse'
+    delete:
+      operationId: deleteCustomEntityType
+      tags:
+        - entity-types
+        - custom
+      parameters:
+        - $ref: '#/components/parameters/entityTypeId'
+      responses:
+        '204':
+          description: Custom entity type has been deleted
+        '404':
+          description: Custom entity type with id not found
+
   /query:
     get:
       operationId: runFqlQuery
