@@ -21,10 +21,6 @@
         "description": "The identifier used for a localized label/name for this entity.",
         "type": "string"
       },
-      "root": {
-        "description": "Indicates if this is a root entity (true) or derived entity (false)",
-        "type": "boolean"
-      },
       "private": {
         "description": "This flag denotes whether the entity type is private or not. Private entity types cannot be accessed by users for querying.",
         "type": "boolean"
@@ -102,7 +98,6 @@
     "required": [
       "id",
       "name",
-      "root",
       "private"
     ],
     "additionalProperties": true
