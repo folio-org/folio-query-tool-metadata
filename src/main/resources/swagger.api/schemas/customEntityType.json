@@ -9,9 +9,10 @@
     },
     {
       "properties": {
-        "creator": {
-          "description": "A UUID identifying entity type creator",
-          "type": "string"
+        "owner": {
+          "description": "A UUID identifying entity type owner",
+          "type": "string",
+          "format": "uuid"
         },
         "shared": {
           "description": "Denotes if the entity type is shared (true) or private (false)",
@@ -30,7 +31,7 @@
         }
       },
       "required": [
-        "creator",
+        "owner",
         "shared"
       ]
     }
