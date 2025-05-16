@@ -28,6 +28,12 @@
           "description": "The update timestamp of the entity type",
           "type": "string",
           "format": "date-time"
+        },
+        "isCustom": {
+          "description": "Discriminator field to distinguish custom entity types from system entity types",
+          "type": "boolean",
+          "default": true,
+          "const": true
         }
       },
       "required": [
