@@ -86,6 +86,14 @@
         },
         "default": []
       },
+      "filterConditions": {
+        "description": "Filter conditions to be included in the WHERE clause of this entity type",
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "default": []
+      },
       "additionalEcsConditions": {
         "description": "Additional conditions to be included in the WHERE clause of this entity type in ECS environments",
         "type": "array",
