@@ -1,3 +1,6 @@
+## 3.1.2
+- Add support for entity-type-level filters ([MODFQMMGR-788](https://folio-org.atlassian.net/browse/MODFQMMGR-788))
+
 ## 3.1.1
 - Add MAX_SIZE_EXCEEDED query status ([MODFQMMGR-723](https://folio-org.atlassian.net/browse/MODFQMMGR-723))
 
