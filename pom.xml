@@ -246,6 +246,8 @@
                 ,fqmMigrateRequest,
                 ,fqmMigrateResponse,
                 ,fqmMigrateWarning,
+                ,LabeledValue,
+                ,availableJoins,
               </modelsToGenerate>
               <generateModelTests>false</generateModelTests>
               <generateModelDocumentation>true</generateModelDocumentation>
