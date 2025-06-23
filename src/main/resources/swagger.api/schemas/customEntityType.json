@@ -5,10 +5,20 @@
   "type": "object",
   "allOf": [
     {
-      "$ref": "entityType.json#/EntityType"
+      "$ref": "entityType.json#/EntityType",
+      "required": []
     },
     {
       "properties": {
+        "id": {
+          "$ref": "entityType.json#/EntityType/properties/id"
+        },
+        "name": {
+          "$ref": "entityType.json#/EntityType/properties/description"
+        },
+        "private": {
+          "$ref": "entityType.json#/EntityType/properties/private"
+        },
         "owner": {
           "description": "A UUID identifying entity type owner",
           "type": "string",
@@ -35,11 +45,7 @@
           "default": true,
           "const": true
         }
-      },
-      "required": [
-        "owner",
-        "shared"
-      ]
+      }
     }
   ]
 }

@@ -108,7 +108,6 @@ paths:
           $ref: '#/components/responses/badRequestResponse'
         '500':
           $ref: '#/components/responses/internalServerErrorResponse'
-
     put:
       operationId: updateCustomEntityType
       tags:
@@ -146,7 +145,50 @@ paths:
           description: Custom entity type has been deleted
         '404':
           description: Custom entity type with id not found
-
+  /entity-types/custom/available-joins:
+    post:
+      operationId: getAvailableJoins
+      tags:
+        - entity-types
+        - custom
+      description: Get available entity types and fields for joining with a custom entity type
+      requestBody:
+        description: Custom entity type definition
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/customEntityType'
+      parameters:
+        - name: customEntityTypeField
+          in: query
+          required: false
+          description: Name of the field from the custom entity type
+          schema:
+            type: string
+        - name: targetEntityTypeId
+          in: query
+          required: false
+          description: UUID of the target entity type
+          schema:
+            $ref: '#/components/schemas/UUID'
+        - name: targetEntityTypeField
+          in: query
+          required: false
+          description: Name of the field from the target entity type
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 'Available entity types and fields for joining'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/availableJoins'
+        '400':
+          $ref: '#/components/responses/badRequestResponse'
+        '500':
+          $ref: '#/components/responses/internalServerErrorResponse'
   /query:
     get:
       operationId: runFqlQuery
@@ -510,6 +552,11 @@ components:
         type: object
         additionalProperties:
           type: object
+
+    availableJoins:
+      $ref: "schemas/availableJoins.json#/AvailableJoins"
+    idAndLabel:
+      $ref: "schemas/availableJoins.json#/LabeledValue"
 
   responses:
     badRequestResponse:
