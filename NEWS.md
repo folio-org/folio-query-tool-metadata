@@ -1,3 +1,6 @@
+## 3.0.3
+- Add support for entity-type-level filters ([MODFQMMGR-788](https://folio-org.atlassian.net/browse/MODFQMMGR-788))
+
 ## 3.0.2
 - Add new jsonbArrayType field type; this should be handled identically to arrayType by FQM consumers ([MODFQMMGR-548](https://folio-org.atlassian.net/browse/MODFQMMGR-548))
 
