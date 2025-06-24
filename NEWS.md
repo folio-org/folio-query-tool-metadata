@@ -3,7 +3,7 @@
 - Add support for custom entity types ([FQTM-12](https://folio-org.atlassian.net/browse/FQTM-12), [MODFQMMGR-632](https://folio-org.atlassian.net/browse/MODFQMMGR-632))
 
 ## 3.1.2
-- Add support for entity-type-level filters ([MODFQMMGR-788](https://folio-org.atlassian.net/browse/MODFQMMGR-788))
+- Add support for entity-type-level filters (backport to Sunflower) ([MODFQMMGR-788](https://folio-org.atlassian.net/browse/MODFQMMGR-788))
 
 ## 3.1.1
 - Add MAX_SIZE_EXCEEDED query status ([MODFQMMGR-723](https://folio-org.atlassian.net/browse/MODFQMMGR-723))
@@ -12,6 +12,9 @@
 - Add order property to ET sources ([MODFQMMGR-543](https://folio-org.atlassian.net/browse/MODFQMMGR-543))
 - New entity type join model ([FQTM-11](https://folio-org.atlassian.net/browse/FQTM-11))
 - Update Java to v21 ([FOLIO-4235](https://folio-org.atlassian.net/browse/FOLIO-4235))
+
+## 3.0.3
+- Add support for entity-type-level filters (backport to Ramsons) ([MODFQMMGR-788](https://folio-org.atlassian.net/browse/MODFQMMGR-788))
 
 ## 3.0.2
 - Add new jsonbArrayType field type; this should be handled identically to arrayType by FQM consumers ([MODFQMMGR-548](https://folio-org.atlassian.net/browse/MODFQMMGR-548))
