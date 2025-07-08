@@ -32,6 +32,11 @@
         "essentialOnly": {
           "description": "Indicates that only critical columns for core functionality should be inherited, excluding non-essential columns",
           "type": "boolean"
+        },
+        "inheritCustomFields": {
+          "description": "Whether to inherit custom fields from this source. If false, only core fields will be inherited.",
+          "type": "boolean",
+          "default": true
         }
       },
       "required": ["targetId"]

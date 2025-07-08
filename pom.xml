@@ -234,6 +234,8 @@
                 ,numberType,
                 ,rangedUUIDType,
                 ,stringUUIDType,
+                ,customFieldType,
+                ,customFieldMetadata,
                 ,nestedObjectProperty,
                 ,valueWithLabel,
                 ,valueSourceApi,
