@@ -164,5 +164,36 @@
         "$ref": "#/ArrayTypeContainer"
       }
     ]
+  },
+  "CustomFieldMetadata": {
+    "type": "object",
+    "properties": {
+      "configurationView": {
+        "description": "Name of the database view containing custom field configuration metadata (field names, possible values, etc.)",
+        "type": "string"
+      },
+      "dataExtractionPath": {
+        "description": "Extraction path for retrieving data for this set of custom fields",
+        "type": "string"
+      }
+    },
+    "required": ["configurationView", "dataExtractionPath"]
+  },
+  "CustomFieldType": {
+    "description": "Special datatype for custom fields defined in https://folio-org.atlassian.net/browse/MODFQMMGR-653",
+    "allOf": [
+      {
+        "$ref": "#/EntityDataType"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "customFieldMetadata": {
+            "$ref": "#/CustomFieldMetadata"
+          }
+        },
+        "required": ["customFieldMetadata"]
+      }
+    ]
   }
 }
