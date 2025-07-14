@@ -154,7 +154,7 @@ paths:
       description: Get available entity types and fields for joining with a custom entity type
       requestBody:
         description: Custom entity type definition
-        required: true
+        required: false
         content:
           application/json:
             schema:
