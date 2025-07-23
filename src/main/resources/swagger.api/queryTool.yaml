@@ -158,33 +158,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/customEntityType'
-      parameters:
-        - name: customEntityTypeField
-          in: query
-          required: false
-          description: Name of the field from the custom entity type
-          schema:
-            type: string
-        - name: targetEntityTypeId
-          in: query
-          required: false
-          description: UUID of the target entity type
-          schema:
-            $ref: '#/components/schemas/UUID'
-        - name: targetEntityTypeField
-          in: query
-          required: false
-          description: Name of the field from the target entity type
-          schema:
-            type: string
+              $ref: '#/components/schemas/availableJoinsRequest'
       responses:
         '200':
           description: 'Available entity types and fields for joining'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/availableJoins'
+                $ref: '#/components/schemas/availableJoinsResponse'
         '400':
           $ref: '#/components/responses/badRequestResponse'
         '500':
@@ -557,8 +538,10 @@ components:
         additionalProperties:
           type: object
 
-    availableJoins:
-      $ref: "schemas/availableJoins.json#/AvailableJoins"
+    availableJoinsRequest:
+      $ref: "schemas/availableJoins.json#/AvailableJoinsRequest"
+    availableJoinsResponse:
+      $ref: "schemas/availableJoins.json#/AvailableJoinsResponse"
     idAndLabel:
       $ref: "schemas/availableJoins.json#/LabeledValue"
 

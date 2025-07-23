@@ -249,7 +249,8 @@
                 ,fqmMigrateResponse,
                 ,fqmMigrateWarning,
                 ,LabeledValue,
-                ,availableJoins,
+                ,availableJoinsRequest,
+                ,availableJoinsResponse,
               </modelsToGenerate>
               <generateModelTests>false</generateModelTests>
               <generateModelDocumentation>true</generateModelDocumentation>
