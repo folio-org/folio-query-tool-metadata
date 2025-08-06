@@ -25,11 +25,6 @@
           "description": "Source alias for this column",
           "type": "string"
         },
-        "hidden": {
-          "description": "Indicates if the field is hidden in UI",
-          "type": "boolean",
-          "default": false
-        },
         "essential": {
           "description": "Indicates if a column is crucial to the definition of an entity type",
           "type": "boolean"
