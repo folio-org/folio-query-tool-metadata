@@ -101,6 +101,11 @@
           "type": "string"
         },
         "default": []
+      },
+      "deleted": {
+        "description": "Indicates if this entity type is deleted",
+        "type": "boolean",
+        "default": false
       }
     },
     "required": [
