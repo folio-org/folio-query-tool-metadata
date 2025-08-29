@@ -62,7 +62,15 @@
     ]
   },
   "DateType": {
-    "description": "Entity field type defined in https://issues.folio.org/browse/UIPQB-9",
+    "description": "Entity field type for dates without time information",
+    "allOf": [
+      {
+        "$ref": "entityDataType.json#/EntityDataType"
+      }
+    ]
+  },
+  "DateTimeType": {
+    "description": "Entity field type for dates that include time information",
     "allOf": [
       {
         "$ref": "entityDataType.json#/EntityDataType"
