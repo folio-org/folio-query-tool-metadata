@@ -225,6 +225,7 @@
                 ,arrayType,
                 ,jsonbArrayType,
                 ,dateType,
+                ,dateTimeType,
                 ,objectType,
                 ,enumType,
                 ,booleanType,

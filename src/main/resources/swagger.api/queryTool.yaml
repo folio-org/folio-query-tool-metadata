@@ -467,6 +467,8 @@ components:
       $ref: schemas/entityDataType.json#/BooleanType
     dateType:
       $ref: schemas/entityDataType.json#/DateType
+    dateTimeType:
+      $ref: schemas/entityDataType.json#/DateTimeType
     enumType:
       $ref: schemas/entityDataType.json#/EnumType
     objectType:
