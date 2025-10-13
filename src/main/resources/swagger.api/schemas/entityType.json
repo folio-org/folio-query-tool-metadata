@@ -106,6 +106,14 @@
         "description": "Indicates if this entity type is deleted",
         "type": "boolean",
         "default": false
+      },
+      "usedBy": {
+        "description": "List of modules that use this entity type",
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "default": []
       }
     },
     "required": [
