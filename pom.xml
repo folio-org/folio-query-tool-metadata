@@ -252,6 +252,7 @@
                 ,LabeledValue,
                 ,availableJoinsRequest,
                 ,availableJoinsResponse,
+                ,updateUsedByRequest,
               </modelsToGenerate>
               <generateModelTests>false</generateModelTests>
               <generateModelDocumentation>true</generateModelDocumentation>
