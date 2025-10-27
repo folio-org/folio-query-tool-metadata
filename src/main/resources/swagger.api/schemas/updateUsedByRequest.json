@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UpdateUsedByRequest",
+  "type": "object",
+  "description": "Request to add or remove a consumer from the usedBy list of a module.",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the consumer to add/remove.",
+      "example": "my-module"
+    },
+    "operation": {
+      "type": "string",
+      "enum": ["add", "remove"],
+      "description": "The operation to perform.",
+      "example": "add"
+    }
+  },
+  "required": ["module", "operation"]
+}

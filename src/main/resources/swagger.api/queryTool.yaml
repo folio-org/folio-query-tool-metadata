@@ -30,6 +30,37 @@ paths:
           $ref: '#/components/responses/badRequestResponse'
         '500':
           $ref: '#/components/responses/internalServerErrorResponse'
+  /entity-types/{entityTypeId}/used-by:
+    patch:
+      operationId: updateEntityTypeUsedBy
+      description: Update the usedBy information for an Entity Type.
+      tags:
+        - entity-types
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateUsedByRequest'
+      parameters:
+        - $ref: '#/components/parameters/entityTypeId'
+      responses:
+        '200':
+          description: 'Updated definition of the entity type'
+          content:
+            application/json:
+              example:
+                id: 0cb79a4c-f7eb-4941-a104-745224ae0292
+                name: item_details
+                private: false
+                columns: [ ]
+                usedBy: ['my-module']
+              schema:
+                $ref: '#/components/schemas/entityType'
+        '400':
+          $ref: '#/components/responses/badRequestResponse'
+        '500':
+          $ref: '#/components/responses/internalServerErrorResponse'
 
   /entity-types/{entityTypeId}/columns/{columnName}/values:
     get:
@@ -505,6 +536,8 @@ components:
       $ref: schemas/query.json#/SubmitQuery
     contentsRequest:
       $ref: schemas/query.json#/ContentsRequest
+    updateUsedByRequest:
+      $ref: schemas/updateUsedByRequest.json
 
     fqmMigrateRequest:
       $ref: schemas/fqmMigrateRequest.json
