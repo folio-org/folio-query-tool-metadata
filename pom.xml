@@ -18,7 +18,7 @@
 
   <properties>
     <java.version>21</java.version>
-    <openapi-generator.version>7.17.0</openapi-generator.version>
+    <openapi-generator.version>7.15.0</openapi-generator.version>
     <maven-compat.version>3.9.10</maven-compat.version>
     <yaml.file>${project.basedir}/src/main/resources/swagger.api/queryTool.yaml</yaml.file>
     <lombok.version>1.18.36</lombok.version>
