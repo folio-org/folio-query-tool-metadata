@@ -18,7 +18,7 @@
 
   <properties>
     <java.version>21</java.version>
-    <openapi-generator.version>7.17.0</openapi-generator.version>
+    <openapi-generator.version>7.15.0</openapi-generator.version>
     <maven-compat.version>3.9.11</maven-compat.version>
     <yaml.file>${project.basedir}/src/main/resources/swagger.api/queryTool.yaml</yaml.file>
     <lombok.version>1.18.36</lombok.version>
@@ -268,6 +268,7 @@
                   <!-- lombok's builder will generate a copy constructor that can shadow implicit no-args, so we make an explicit one -->
                   @lombok.NoArgsConstructor
                   @lombok.experimental.SuperBuilder(toBuilder = true)
+                  @lombok.Builder <!-- Builder and SuperBuilder must both be specified for openapi-generator to add @Builder.Default -->
                 </additionalModelTypeAnnotations>
                 <containerDefaultToNull>true</containerDefaultToNull>
               </configOptions>

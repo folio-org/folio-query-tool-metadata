@@ -6,8 +6,11 @@
   "AvailableJoinsRequest": {
     "type": "object",
     "properties": {
-      "customEntityType": {
-        "$ref": "customEntityType.json"
+      "sources": {
+        "type": "array",
+        "items": {
+          "$ref": "entityTypeSourceEntityType.json"
+        }
       },
       "sourceField": {
         "type": "string",
@@ -55,6 +58,9 @@
         "description": "Human-readable label"
       },
       "value": {
+        "type": "string"
+      },
+      "description": {
         "type": "string"
       }
     },
