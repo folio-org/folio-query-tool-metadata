@@ -12,29 +12,14 @@
           "$ref": "entityTypeSourceEntityType.json"
         }
       },
-      "sourceField": {
-        "type": "string",
-        "description": "Name of the field from the custom entity type"
-      },
       "targetId": {
         "description": "UUID of the target entity type",
         "$ref": "common.json#/UUID"
-      },
-      "targetField": {
-        "description": "Name of the field from the target entity type",
-        "type": "string"
       }
     }
   },
   "AvailableJoinsResponse": {
     "properties": {
-      "availableSourceFields": {
-        "description": "Available fields from the custom entity type that can be used for joining",
-        "type": "array",
-        "items": {
-          "$ref": "#/LabeledValue"
-        }
-      },
       "availableTargetIds": {
         "description": "Available target entity types that can be joined with the custom entity type",
         "type": "array",
@@ -42,11 +27,11 @@
           "$ref": "#/LabeledValueWithDescription"
         }
       },
-      "availableTargetFields": {
-        "description": "Available fields from the target entity type that can be used for joining",
+      "availableJoinConditions": {
+        "description": "Available join conditions between the source and target entity types, as a pair of source and target field values",
         "type": "array",
         "items": {
-          "$ref": "#/LabeledValue"
+          "$ref": "#/JoinFieldPair"
         }
       }
     }
@@ -80,6 +65,20 @@
         },
         "required": []
       }
+    ]
+  },
+  "JoinFieldPair": {
+    "properties": {
+      "sourceField": {
+        "$ref": "#/LabeledValue"
+      },
+      "targetField": {
+        "$ref": "#/LabeledValue"
+      }
+    },
+    "required": [
+      "sourceField",
+      "targetField"
     ]
   }
 }
