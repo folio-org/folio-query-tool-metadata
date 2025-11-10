@@ -250,6 +250,7 @@
                 ,fqmMigrateResponse,
                 ,fqmMigrateWarning,
                 ,LabeledValue,
+                ,LabeledValueWithDescription,
                 ,availableJoinsRequest,
                 ,availableJoinsResponse,
                 ,updateUsedByRequest,

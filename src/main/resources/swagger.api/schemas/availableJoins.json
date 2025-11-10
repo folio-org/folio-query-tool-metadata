@@ -39,7 +39,7 @@
         "description": "Available target entity types that can be joined with the custom entity type",
         "type": "array",
         "items": {
-          "$ref": "#/LabeledValue"
+          "$ref": "#/LabeledValueWithDescription"
         }
       },
       "availableTargetFields": {
@@ -59,14 +59,27 @@
       },
       "value": {
         "type": "string"
-      },
-      "description": {
-        "type": "string"
       }
     },
     "required": [
       "id",
       "label"
+    ]
+  },
+  "LabeledValueWithDescription": {
+    "allOf": [
+      {
+        "$ref": "#/LabeledValue"
+      },
+      {
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "Description of the value"
+          }
+        },
+        "required": []
+      }
     ]
   }
 }
