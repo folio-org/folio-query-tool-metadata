@@ -251,6 +251,7 @@
                 ,fqmMigrateWarning,
                 ,LabeledValue,
                 ,LabeledValueWithDescription,
+                ,JoinFieldPair,
                 ,availableJoinsRequest,
                 ,availableJoinsResponse,
                 ,updateUsedByRequest,
