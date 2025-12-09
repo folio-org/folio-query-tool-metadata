@@ -68,6 +68,11 @@
       "description": "Indicates if the field values are validated against a predefined format or set of values",
       "type": "boolean",
       "default": false
+    },
+    "localizeForExports": {
+      "description": "Indicates if the field values should be localized when exported (e.g., translating enum values or formatted values for exports)",
+      "type": "boolean",
+      "default": false
     }
   },
   "required": ["name", "dataType"]
