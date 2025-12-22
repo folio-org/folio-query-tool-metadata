@@ -31,8 +31,7 @@
         },
         "order": {
           "description": "Order of the inherited fields from this source, relative to the fields from other sources. Defaults to 1073741823 (INT_MAX/2)",
-          "type": "integer",
-          "default": 1073741823
+          "type": "integer"
         }
       },
       "required": ["type", "alias"]
