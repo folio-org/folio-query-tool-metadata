@@ -6,13 +6,9 @@
       "type": "string",
       "description": "Error message text"
     },
-    "type": {
-      "type": "string",
-      "description": "Error message type"
-    },
     "code": {
       "type": "string",
-      "description": "Error message code"
+      "description": "Error message code; see implementing module's API documentation for possible values"
     },
     "parameters": {
       "description": "Error message parameters",
@@ -20,7 +16,5 @@
     }
   },
   "additionalProperties": false,
-  "required": [
-    "message"
-  ]
+  "required": ["message", "code"]
 }
