@@ -31,8 +31,7 @@ paths:
                 $ref: '#/components/schemas/entityType'
         '4XX':
           $ref: '#/components/responses/badRequestResponse'
-        '500':
-          $ref: '#/components/responses/internalServerErrorResponse'
+
   /entity-types/{entityTypeId}/used-by:
     patch:
       operationId: updateEntityTypeUsedBy
@@ -56,14 +55,12 @@ paths:
                 id: 0cb79a4c-f7eb-4941-a104-745224ae0292
                 name: item_details
                 private: false
-                columns: [ ]
+                columns: []
                 usedBy: ['my-module']
               schema:
                 $ref: '#/components/schemas/entityType'
         '4XX':
           $ref: '#/components/responses/badRequestResponse'
-        '500':
-          $ref: '#/components/responses/internalServerErrorResponse'
 
   /entity-types/{entityTypeId}/columns/{columnName}/values:
     get:
@@ -88,8 +85,6 @@ paths:
                 $ref: '#/components/schemas/columnValues'
         '4XX':
           $ref: '#/components/responses/badRequestResponse'
-        '500':
-          $ref: '#/components/responses/internalServerErrorResponse'
 
   /entity-types/custom:
     post:
@@ -121,8 +116,7 @@ paths:
               example: /entity-types/custom/6087a09b-8b34-4e6c-8173-c0c5f0f45e7a
         '4XX':
           $ref: '#/components/responses/badRequestResponse'
-        '500':
-          $ref: '#/components/responses/internalServerErrorResponse'
+
   /entity-types/custom/{entityTypeId}:
     get:
       operationId: getCustomEntityType
@@ -140,8 +134,7 @@ paths:
                 $ref: '#/components/schemas/customEntityType'
         '4XX':
           $ref: '#/components/responses/badRequestResponse'
-        '500':
-          $ref: '#/components/responses/internalServerErrorResponse'
+
     put:
       operationId: updateCustomEntityType
       tags:
@@ -165,8 +158,7 @@ paths:
                 $ref: '#/components/schemas/customEntityType'
         '4XX':
           $ref: '#/components/responses/badRequestResponse'
-        '500':
-          $ref: '#/components/responses/internalServerErrorResponse'
+
     delete:
       operationId: deleteCustomEntityType
       tags:
@@ -179,8 +171,6 @@ paths:
           description: Custom entity type has been deleted
         '4XX':
           $ref: '#/components/responses/badRequestResponse'
-        '500':
-          $ref: '#/components/responses/internalServerErrorResponse'
 
   /entity-types/custom/available-joins:
     post:
@@ -205,8 +195,6 @@ paths:
                 $ref: '#/components/schemas/availableJoinsResponse'
         '4XX':
           $ref: '#/components/responses/badRequestResponse'
-        '500':
-          $ref: '#/components/responses/internalServerErrorResponse'
 
   /query:
     get:
@@ -244,8 +232,7 @@ paths:
                 $ref: '#/components/schemas/resultsetPage'
         '4XX':
           $ref: '#/components/responses/badRequestResponse'
-        '500':
-          $ref: '#/components/responses/internalServerErrorResponse'
+
     post:
       operationId: runFqlQueryAsync
       description: Runs an FQL query asynchronously
@@ -269,8 +256,6 @@ paths:
                 $ref: '#/components/schemas/queryIdentifier'
         '4XX':
           $ref: '#/components/responses/badRequestResponse'
-        '500':
-          $ref: '#/components/responses/internalServerErrorResponse'
 
   /query/{queryId}:
     get:
@@ -298,8 +283,7 @@ paths:
                 $ref: '#/components/schemas/queryDetails'
         '4XX':
           $ref: '#/components/responses/badRequestResponse'
-        '500':
-          $ref: '#/components/responses/internalServerErrorResponse'
+
     delete:
       operationId: deleteQuery
       description: Delete a query and its results
@@ -312,8 +296,7 @@ paths:
           description: Query has been deleted
         '4XX':
           $ref: '#/components/responses/badRequestResponse'
-        '500':
-          $ref: '#/components/responses/internalServerErrorResponse'
+
   /query/{queryId}/sortedIds:
     get:
       operationId: getSortedIds
@@ -333,8 +316,7 @@ paths:
                 $ref: '#/components/schemas/queryResultIds'
         '4XX':
           $ref: '#/components/responses/badRequestResponse'
-        '500':
-          $ref: '#/components/responses/internalServerErrorResponse'
+
   /query/contents:
     post:
       tags:
@@ -357,8 +339,7 @@ paths:
                 $ref: '#/components/schemas/contents'
         '4XX':
           $ref: '#/components/responses/badRequestResponse'
-        '500':
-          $ref: '#/components/responses/internalServerErrorResponse'
+
   /query/contents/privileged:
     post:
       tags:
@@ -381,8 +362,7 @@ paths:
                 $ref: '#/components/schemas/contents'
         '4XX':
           $ref: '#/components/responses/badRequestResponse'
-        '500':
-          $ref: '#/components/responses/internalServerErrorResponse'
+
 components:
   parameters:
     entityTypeId:
@@ -578,11 +558,11 @@ components:
           type: object
 
     availableJoinsRequest:
-      $ref: "schemas/availableJoins.json#/AvailableJoinsRequest"
+      $ref: 'schemas/availableJoins.json#/AvailableJoinsRequest'
     availableJoinsResponse:
-      $ref: "schemas/availableJoins.json#/AvailableJoinsResponse"
+      $ref: 'schemas/availableJoins.json#/AvailableJoinsResponse'
     idAndLabel:
-      $ref: "schemas/availableJoins.json#/LabeledValue"
+      $ref: 'schemas/availableJoins.json#/LabeledValue'
 
   responses:
     badRequestResponse:
@@ -592,14 +572,5 @@ components:
           example:
             message: Entity type ID 6c611396-b6bc-56a7-aada-3a90683d559c was not found
             code: entity.type.not.found
-          schema:
-            $ref: '#/components/schemas/error'
-    internalServerErrorResponse:
-      description: When unhandled exception occurred during code execution, e.g. NullPointerException
-      content:
-        application/json:
-          example:
-            message: Unexpected error
-            code: unknown.error
           schema:
             $ref: '#/components/schemas/error'
