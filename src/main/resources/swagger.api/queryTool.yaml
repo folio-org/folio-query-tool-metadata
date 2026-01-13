@@ -1,8 +1,11 @@
 openapi: 3.0.0
 info:
-  title: Folio Query Tool API
+  title: FOLIO Query Tool API
   version: v1
-  description: Folio Query Tool API
+  description: FOLIO Query Tool API
+
+servers:
+  - url: https://folio-etesting-snapshot-kong.ci.folio.org/
 
 paths:
   /entity-types/{entityTypeId}:
@@ -26,7 +29,7 @@ paths:
                 columns: []
               schema:
                 $ref: '#/components/schemas/entityType'
-        '400':
+        '4XX':
           $ref: '#/components/responses/badRequestResponse'
         '500':
           $ref: '#/components/responses/internalServerErrorResponse'
@@ -57,7 +60,7 @@ paths:
                 usedBy: ['my-module']
               schema:
                 $ref: '#/components/schemas/entityType'
-        '400':
+        '4XX':
           $ref: '#/components/responses/badRequestResponse'
         '500':
           $ref: '#/components/responses/internalServerErrorResponse'
@@ -83,7 +86,7 @@ paths:
                     name: Item Status
               schema:
                 $ref: '#/components/schemas/columnValues'
-        '400':
+        '4XX':
           $ref: '#/components/responses/badRequestResponse'
         '500':
           $ref: '#/components/responses/internalServerErrorResponse'
@@ -116,7 +119,7 @@ paths:
                 format: url
               description: The URL of the newly created custom entity type
               example: /entity-types/custom/6087a09b-8b34-4e6c-8173-c0c5f0f45e7a
-        '400':
+        '4XX':
           $ref: '#/components/responses/badRequestResponse'
         '500':
           $ref: '#/components/responses/internalServerErrorResponse'
@@ -135,7 +138,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/customEntityType'
-        '400':
+        '4XX':
           $ref: '#/components/responses/badRequestResponse'
         '500':
           $ref: '#/components/responses/internalServerErrorResponse'
@@ -160,7 +163,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/customEntityType'
-        '400':
+        '4XX':
           $ref: '#/components/responses/badRequestResponse'
         '500':
           $ref: '#/components/responses/internalServerErrorResponse'
@@ -174,8 +177,11 @@ paths:
       responses:
         '204':
           description: Custom entity type has been deleted
-        '404':
-          description: Custom entity type with id not found
+        '4XX':
+          $ref: '#/components/responses/badRequestResponse'
+        '500':
+          $ref: '#/components/responses/internalServerErrorResponse'
+
   /entity-types/custom/available-joins:
     post:
       operationId: getAvailableJoins
@@ -197,10 +203,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/availableJoinsResponse'
-        '400':
+        '4XX':
           $ref: '#/components/responses/badRequestResponse'
         '500':
           $ref: '#/components/responses/internalServerErrorResponse'
+
   /query:
     get:
       operationId: runFqlQuery
@@ -235,7 +242,7 @@ paths:
                 totalRecords: 1
               schema:
                 $ref: '#/components/schemas/resultsetPage'
-        '400':
+        '4XX':
           $ref: '#/components/responses/badRequestResponse'
         '500':
           $ref: '#/components/responses/internalServerErrorResponse'
@@ -260,7 +267,7 @@ paths:
                 queryId: 37140576-be84-1a0e-7546-0912d8320019
               schema:
                 $ref: '#/components/schemas/queryIdentifier'
-        '400':
+        '4XX':
           $ref: '#/components/responses/badRequestResponse'
         '500':
           $ref: '#/components/responses/internalServerErrorResponse'
@@ -289,7 +296,7 @@ paths:
                 status: IN_PROGRESS
               schema:
                 $ref: '#/components/schemas/queryDetails'
-        '400':
+        '4XX':
           $ref: '#/components/responses/badRequestResponse'
         '500':
           $ref: '#/components/responses/internalServerErrorResponse'
@@ -303,8 +310,10 @@ paths:
       responses:
         '204':
           description: Query has been deleted
-        '404':
-          description: Query with id not found
+        '4XX':
+          $ref: '#/components/responses/badRequestResponse'
+        '500':
+          $ref: '#/components/responses/internalServerErrorResponse'
   /query/{queryId}/sortedIds:
     get:
       operationId: getSortedIds
@@ -322,7 +331,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/queryResultIds'
-        '400':
+        '4XX':
           $ref: '#/components/responses/badRequestResponse'
         '500':
           $ref: '#/components/responses/internalServerErrorResponse'
@@ -346,7 +355,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/contents'
-        '400':
+        '4XX':
           $ref: '#/components/responses/badRequestResponse'
         '500':
           $ref: '#/components/responses/internalServerErrorResponse'
@@ -370,7 +379,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/contents'
-        '400':
+        '4XX':
           $ref: '#/components/responses/badRequestResponse'
         '500':
           $ref: '#/components/responses/internalServerErrorResponse'
@@ -516,8 +525,6 @@ components:
       $ref: schemas/entityDataType.json#/CustomFieldType
     entityTypeDefaultSort:
       $ref: schemas/entityTypeDefaultSort.json
-    errors:
-      $ref: schemas/error/errors.json
     error:
       $ref: schemas/error/error.json
     parameters:
@@ -579,19 +586,20 @@ components:
 
   responses:
     badRequestResponse:
-      description: Bad request errors
+      description: Invalid request
       content:
         application/json:
+          example:
+            message: Entity type ID 6c611396-b6bc-56a7-aada-3a90683d559c was not found
+            code: entity.type.not.found
           schema:
-            $ref: '#/components/schemas/errors'
+            $ref: '#/components/schemas/error'
     internalServerErrorResponse:
       description: When unhandled exception occurred during code execution, e.g. NullPointerException
       content:
         application/json:
           example:
-            errors:
-              - message: Unexpected error
-                code: unexpected.error
-            total_records: 1
+            message: Unexpected error
+            code: unknown.error
           schema:
-            $ref: '#/components/schemas/errors'
+            $ref: '#/components/schemas/error'

@@ -199,7 +199,6 @@
               <generateModels>true</generateModels>
               <modelsToGenerate>
                 <!-- the commas at the start and end of each line are load-bearing, as otherwise openapi-generator will include the newline/indentation as part of the model name -->
-                ,errors,
                 ,error,
                 ,parameters,
                 ,parameter,
