@@ -66,6 +66,7 @@ paths:
     get:
       operationId: getColumnValues
       description: Get the values of an entity type column.
+      deprecated: true
       tags:
         - entity-types
       parameters:
