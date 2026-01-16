@@ -86,6 +86,26 @@ paths:
         '4XX':
           $ref: '#/components/responses/badRequestResponse'
 
+  /entity-types/{entityTypeId}/field-values:
+    get:
+      operationId: getFieldValues
+      description: Get the values of an entity type field (supports nested field paths).
+      tags:
+        - entity-types
+      parameters:
+        - $ref: '#/components/parameters/entityTypeId'
+        - $ref: '#/components/parameters/field'
+        - $ref: '#/components/parameters/search'
+      responses:
+        '200':
+          description: 'Values of an entity type column'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/columnValues'
+        '4XX':
+          $ref: '#/components/responses/badRequestResponse'
+
   /entity-types/custom:
     post:
       operationId: createCustomEntityType
@@ -451,6 +471,13 @@ components:
       schema:
         type: boolean
         default: false
+    field:
+      name: field
+      in: query
+      required: true
+      description: Field name to retrieve values for. This may refer to top-level or nested fields.
+      schema:
+        type: string
 
   schemas:
     UUID:
