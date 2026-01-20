@@ -67,6 +67,7 @@ paths:
       operationId: getColumnValues
       description: >
         Deprecated in MODFQMMGR-1048: use GET /entity-types/{entityTypeId}/field-values?field=... instead.
+        To be removed in MODFQMMGR-1052.
         Get the values of an entity type column.
       deprecated: true
       tags:
