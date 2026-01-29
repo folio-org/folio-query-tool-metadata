@@ -13,6 +13,10 @@
         "id": {
           "$ref": "entityType.json#/EntityType/properties/id"
         },
+        "_version": {
+          "description": "FQL query version, used for migrations",
+          "type": "string"
+        },
         "name": {
           "$ref": "entityType.json#/EntityType/properties/description"
         },
