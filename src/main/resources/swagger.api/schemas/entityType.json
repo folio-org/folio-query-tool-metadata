@@ -25,10 +25,6 @@
         "description": "This flag denotes whether the entity type is private or not. Private entity types cannot be accessed by users for querying.",
         "type": "boolean"
       },
-      "customFieldEntityTypeId": {
-        "description": "The IDs of the custom field entity type ",
-        "type": "string"
-      },
       "columns": {
         "type": "array",
         "items": {
@@ -47,29 +43,12 @@
           "$ref": "entityTypeDefaultSort.json"
         }
       },
-      "fromClause": {
-        "description": "FROM clause containing all src views that need to be joined to query this entity type",
-        "type": "string",
-        "deprecated": true
-      },
-      "idView": {
-        "description": "View from which the content IDs for this entity type are extracted",
-        "type": "string"
-      },
       "groupByFields": {
         "description": "Ordered list of fields used in the GROUP BY clause for this entity type",
         "type": "array",
         "items": {
           "type": "string"
         }
-      },
-      "sourceView": {
-        "description": "View from which the dynamic columns for this entity type are extracted",
-        "type": "string"
-      },
-      "sourceViewExtractor": {
-        "description": "Getting the base source of the custom field",
-        "type": "string"
       },
       "sources": {
         "type": "array",
