@@ -73,6 +73,9 @@
       "description": "Indicates if the field values should be localized when exported (e.g., translating enum values or formatted values for exports)",
       "type": "boolean",
       "default": false
+    },
+    "defaultValue": {
+      "description": "Default value for this field if none is provided"
     }
   },
   "required": ["name", "dataType"]
