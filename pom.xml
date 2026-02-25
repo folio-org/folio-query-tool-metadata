@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.5.7</version>
+    <version>4.0.2</version>
     <relativePath /> <!-- lookup parent from repository -->
   </parent>
   <groupId>org.folio</groupId>
@@ -22,7 +22,7 @@
     <maven-compat.version>3.9.11</maven-compat.version>
     <yaml.file>${project.basedir}/src/main/resources/swagger.api/queryTool.yaml</yaml.file>
     <lombok.version>1.18.36</lombok.version>
-    <jackson-databind-nullable.version>0.2.8</jackson-databind-nullable.version>
+    <jackson-databind-nullable.version>0.2.9</jackson-databind-nullable.version>
     <snakeyaml.version>2.0</snakeyaml.version>
     <!-- -->
     <versions-maven-plugin.version>2.19.1</versions-maven-plugin.version>

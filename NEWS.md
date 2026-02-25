@@ -1,3 +1,6 @@
+## 4.0.0-RC1 (In development)
+- Upgrade Spring Boot to v4.0.2
+
 ## 4.0.0 (In development)
 - Remove the `root` property from EntityType definitions ([MODFQMMGR-780](https://folio-org.atlassian.net/browse/MODFQMMGR-780))
 - Add support for custom entity types ([FQTM-12](https://folio-org.atlassian.net/browse/FQTM-12), [MODFQMMGR-632](https://folio-org.atlassian.net/browse/MODFQMMGR-632))
