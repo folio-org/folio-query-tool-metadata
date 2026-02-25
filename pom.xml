@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+<!--  Upgrade Spring Boot to v4.0.2-->
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.5.7</version>
+    <version>4.0.2</version>
     <relativePath /> <!-- lookup parent from repository -->
   </parent>
   <groupId>org.folio</groupId>
   <artifactId>folio-query-tool-metadata</artifactId>
-  <version>4.0.0-SNAPSHOT</version>
+  <version>4.0.0-RC1</version>
   <name>folio-query-tool-metadata</name>
   <description>This is a library (jar) that provides the SPI for used by the Query tool and must be implemented by a
     data provider,
@@ -22,7 +23,7 @@
     <maven-compat.version>3.9.11</maven-compat.version>
     <yaml.file>${project.basedir}/src/main/resources/swagger.api/queryTool.yaml</yaml.file>
     <lombok.version>1.18.36</lombok.version>
-    <jackson-databind-nullable.version>0.2.8</jackson-databind-nullable.version>
+    <jackson-databind-nullable.version>0.2.9</jackson-databind-nullable.version>
     <snakeyaml.version>2.0</snakeyaml.version>
     <!-- -->
     <versions-maven-plugin.version>2.19.1</versions-maven-plugin.version>

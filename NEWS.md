@@ -1,6 +1,7 @@
 ## 4.0.0 (In development)
 - Remove the `root` property from EntityType definitions ([MODFQMMGR-780](https://folio-org.atlassian.net/browse/MODFQMMGR-780))
 - Add support for custom entity types ([FQTM-12](https://folio-org.atlassian.net/browse/FQTM-12), [MODFQMMGR-632](https://folio-org.atlassian.net/browse/MODFQMMGR-632))
+- Spring Boot upgrade to v4.0.2
 
 ## 3.1.2
 - Add support for entity-type-level filters ([MODFQMMGR-788](https://folio-org.atlassian.net/browse/MODFQMMGR-788))
