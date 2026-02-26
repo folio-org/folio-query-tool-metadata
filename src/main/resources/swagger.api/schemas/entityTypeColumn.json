@@ -41,6 +41,10 @@
           "description": "[Internal only, not for definitions] The simplest entity type that this column is derived from",
           "type": "string",
           "format": "uuid"
+        },
+        "maxColumnWidth": {
+          "description": "The maximum width of the column when displayed in the UI",
+          "type": "integer"
         }
       },
       "required": []
