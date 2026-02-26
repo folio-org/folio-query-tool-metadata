@@ -10,7 +10,7 @@
   </parent>
   <groupId>org.folio</groupId>
   <artifactId>folio-query-tool-metadata</artifactId>
-  <version>4.0.0-RC1</version>
+  <version>4.0.0-SNAPSHOT</version>
   <name>folio-query-tool-metadata</name>
   <description>This is a library (jar) that provides the SPI for used by the Query tool and must be implemented by a
     data provider,
