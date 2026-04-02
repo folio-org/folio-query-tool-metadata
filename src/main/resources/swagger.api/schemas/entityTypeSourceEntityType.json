@@ -37,6 +37,10 @@
           "description": "Whether to inherit custom fields from this source. If false, only core fields will be inherited.",
           "type": "boolean",
           "default": true
+        },
+        "additionalJoinCondition": {
+          "description": "Filter condition to be included in the ON clause of the JOIN for entity type as SQL. This will be ANDed with the generated JOIN condition.",
+          "type": "string"
         }
       },
       "required": ["targetId"]
