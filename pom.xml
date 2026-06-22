@@ -235,6 +235,7 @@
                 ,numberType,
                 ,rangedUUIDType,
                 ,stringUUIDType,
+                ,marcType,
                 ,customFieldType,
                 ,customFieldMetadata,
                 ,nestedObjectProperty,

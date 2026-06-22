@@ -525,6 +525,8 @@ components:
       $ref: schemas/entityDataType.json#/CustomFieldMetadata
     customFieldType:
       $ref: schemas/entityDataType.json#/CustomFieldType
+    marcType:
+      $ref: schemas/entityDataType.json#/MarcType
     entityTypeDefaultSort:
       $ref: schemas/entityTypeDefaultSort.json
     error:
