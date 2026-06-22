@@ -85,7 +85,7 @@
       }
     ]
   },
-  "MarcDataType": {
+  "MarcType": {
     "description": "Entity field type representing MARC data",
     "allOf": [
       {
