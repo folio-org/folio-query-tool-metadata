@@ -85,6 +85,14 @@
       }
     ]
   },
+  "MarcDataType": {
+    "description": "Entity field type representing MARC data",
+    "allOf": [
+      {
+        "$ref": "entityDataType.json#/EntityDataType"
+      }
+    ]
+  },
   "EnumType": {
     "description": "Entity field type defined in https://issues.folio.org/browse/UIPQB-11",
     "allOf": [
