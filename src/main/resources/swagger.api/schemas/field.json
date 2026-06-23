@@ -76,6 +76,13 @@
     },
     "defaultValue": {
       "description": "Default value for this field if none is provided"
+    },
+    "availableOperators": {
+      "description": "The operators available for this field when building queries. When set, this overrides the default operator set for the data type. When absent, the default operators for the data type are used.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     }
   },
   "required": ["name", "dataType"]
