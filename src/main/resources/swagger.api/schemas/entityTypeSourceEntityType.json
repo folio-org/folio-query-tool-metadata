@@ -25,6 +25,11 @@
         "overrideJoinDirection": {
           "$ref": "./field-joins/joinDirection.json"
         },
+        "cascadeJoinDirection": {
+          "description": "When true and this source is itself an entity-type LEFT-joined upstream, the overrideJoinDirection of this source is propagated into the joins of its inner sub-sources during flattening. Use this on outer-composite -> inner-composite LEFT joins to preserve upstream rows that would otherwise be dropped by a RIGHT JOIN emitted for an inner table.",
+          "type": "boolean",
+          "default": false
+        },
         "useIdColumns": {
           "description": "Whether to use the idColumns of this source as idColumns for the enclosing entity type",
           "type": "boolean"
